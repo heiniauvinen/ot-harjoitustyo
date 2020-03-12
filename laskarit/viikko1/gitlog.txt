@@ -1,0 +1,96 @@
+commit 1b97901a37a3e749cc057035f7f6709924bc760b
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Thu Mar 12 15:27:09 2020 +0200
+
+    file1 poisto ja file2 uudelleennimeäminen
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8a39504cef444aed26a0e3687fdcc7fc43b1e83f
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Thu Mar 12 15:20:20 2020 +0200
+
+    luotut tiedostot file1,file2,file3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d74b6f75ea1dced283be1643d0dd7be817ecb49b
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Thu Mar 12 12:21:06 2020 +0200
+
+    muutokset
+
+ tiedosto.txt => eka.txt | 1 +
+ kolmas.txt              | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 973dedaa2cb4b135fc21dff0569fd7ef3e08f3c3
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Thu Mar 12 12:14:56 2020 +0200
+
+    nimeäminen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit dd14754bca00abc478e3597270eae94f07826108
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:44:32 2020 +0200
+
+    tiedosto.txt 2
+
+ tiedosto.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 8643847bdf06460537135fd4c58f721334bcbbab
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:32:51 2020 +0200
+
+    hakemisto ja tiedosto
+
+ stuff/testi.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 74e0f19b1e26ce251f5c0ffc2295730a6c1be190
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:30:29 2020 +0200
+
+    toinen ja kolmas muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit b970a328416ede75b213a5350dc20c7749322f39
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:26:28 2020 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5fa6213ffcc83dd4aec52c6aa0521a89e15d234d
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:11:54 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit ade03f9a37b5b3625dd2348062bcd9464e280c76
+Author: heiniauvinen <heini.auvinen@helsinki.fi>
+Date:   Tue Mar 10 13:06:12 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
