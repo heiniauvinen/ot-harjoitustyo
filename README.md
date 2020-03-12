@@ -1,3 +1,7 @@
-# HARJOITUSTYÖ
+# OHJELMISTOTEKNIIKKA, HARJOITUSTYÖ
 
-Tämä on *ohjelmistotekniikka* -kurssin **harjoitustyö**. 
+## Tehtävät
+### Viikko 1
+(laskarit/viikko1/gitlog.txt) 
+
+(laskarit/viikko1/komentorivi.txt)
