@@ -1,6 +1,6 @@
-VAATIMUSMÄÄRITTELY
+# VAATIMUSMÄÄRITTELY
 ## Sovellus
-Sovelluksen tarjoaa käyttäjälleen mahdollisuuden kerrata ala- ja ylä-asteen matematiikan tehtäviä. 
+Sovelluksen tarjoaa käyttäjälleen mahdollisuuden kerrata ala- ja ylä-asteen matematiikan tehtäviä.
 Käyttäjä kirjautuu sisään sovellukseen, jolloin hän pystyy myös tarkastella aiempia tuloksiaan, ja suorittamaan testejä uudestaan.
 
 ## Arkkitehtuuri
