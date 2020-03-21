@@ -10,4 +10,3 @@ Ylempiä linkkejä klikkaamalla pääset tiedostoihin
 
 ### Viikko 2 :pizza:
 
-[näyttökuva](laskarit/viikko2/ot_näyttökuva2.png)
