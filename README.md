@@ -7,3 +7,6 @@
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
 
 Ylempiä linkkejä klikkaamalla pääset tiedostoihin
+
+### Viikko 2 :pizza:
+
