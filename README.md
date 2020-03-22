@@ -9,9 +9,9 @@ Ylempiä linkkejä klikkaamalla pääset tiedostoihin
 
 ### Viikko 2 :pizza:
 
-[MÄÄRITTELYDOKUMENTTI](dokumentointi/vaatimusmäärittely.md)
+[MÄÄRITTELYDOKUMENTTI](dokumentaatio/vaatimusmäärittely.md)
 
-[TYÖAIKAKIRJANPITO](dokumentointi/tuntikirjanpito.md)
+[TYÖAIKAKIRJANPITO](dokumentaatio/tuntikirjanpito.md)
 
 
 
