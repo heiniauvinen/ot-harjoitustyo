@@ -3,12 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package matematiikkasovellus;
+package app;
+
+import ui.Gui;
 
 /**
  *
  * @author heiniauvinen
  */
-public class Main {
+public class Matikkapeli {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Gui.launch(Gui.class);
+        
+    }
     
 }
