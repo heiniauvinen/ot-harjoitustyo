@@ -5,4 +5,6 @@
 | 21.3. | 4    | määrittelydokumentti, alustava toteutus |
 | 21.3. | 2    | JavaFX tutustuminen ja sovelluspohjan luonti |
 | 22.3. | 2    | määrittelydokumentti |
-| yht   | 8    | |
+| 25.3. | 1    | testikattavuusraportti |
+| 25.3. | 3    | Sovelluksen rungon fiksausta ja testin luonti | 
+| yht   | 11   | |
