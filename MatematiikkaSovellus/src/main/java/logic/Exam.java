@@ -34,9 +34,9 @@ public class Exam {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
             int result = left + right;
-            
+
             Question question = new Question(left, right, result, "+");
-            
+
             questions.add(question);
         }
     }
@@ -48,9 +48,9 @@ public class Exam {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
             int result = left - right;
-            
+
             Question question = new Question(left, right, result, "-");
-            
+
             questions.add(question);
         }
     }
@@ -64,7 +64,7 @@ public class Exam {
     }
 
     public int giveRandomNumber() {
-        int a = random.nextInt(upperLimit);
+        int a = random.nextInt(upperLimit) +lowerLimit;
 
         return a;
     }
@@ -78,6 +78,7 @@ public class Exam {
             return "OK";
         }
     }
+
     public ArrayList<Question> getQuestions() {
         return questions;
     }
