@@ -7,8 +7,8 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely] (dokumentointi/vaatimusmäärittely.md)
-[Työaikakirjanpito] (dokumentointi/tuntikirjanpito.md)
+[Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
+[Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
 ## Testaus
 
