@@ -18,6 +18,7 @@ public class Exam {
     int lowerLimit;
     int numberOfQuestions;
     ArrayList<Question> questions;
+    ArrayList<Integer> answers;
     Random random;
 
     public Exam() {
@@ -82,5 +83,6 @@ public class Exam {
     public ArrayList<Question> getQuestions() {
         return questions;
     }
+  
 
 }

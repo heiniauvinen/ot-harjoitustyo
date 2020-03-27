@@ -10,12 +10,13 @@ package logic;
  * @author heiniauvinen
  */
 public class Question {
+
     int left;
     int right;
     int result;
     String type;
-    
-    public Question(int left,int right,int result, String type) {
+
+    public Question(int left, int right, int result, String type) {
         this.left = left;
         this.right = right;
         this.result = result;
@@ -33,9 +34,14 @@ public class Question {
     public int getResult() {
         return result;
     }
+
     @Override
     public String toString() {
-        return left + " " + type +" " + right +" = "+ result;
+        return left + " " + type + " " + right + " = " + result;
     }
-    
+
+    public String questionString() {
+        return left + " " + type + " " + right + " = ";
+    }
+
 }

@@ -1,17 +1,36 @@
 
-## Tehtävät
-### Viikko 1 :hamburger:
-[gitlog.txt](laskarit/viikko1/gitlog.txt) 
+# Matematiikkasovellus
 
-[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+Sovellus tarjoaa mahdollisuuden harjoitella päässälaskutaitoja, yhteen- ja vähennyslaskuilla.
+Käyttäjä voi itse valita lukujen ala- ja ylärajan, jolloin vaikeustason määrittäminen on helppoa.
+Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
-Ylempiä linkkejä klikkaamalla pääset tiedostoihin
+## Dokumentaatio
 
-### Viikko 2 :pizza:
+[Vaatimusmäärittely] (dokumentointi/vaatimusmäärittely.md)
+[Työaikakirjanpito] (dokumentointi/tuntikirjanpito.md)
 
-[MÄÄRITTELYDOKUMENTTI](dokumentointi/vaatimusmäärittely.md)
+## Testaus
 
-[TYÖAIKAKIRJANPITO](dokumentointi/tuntikirjanpito.md)
+Testit voidaan suorittaa komennolla
+
+```
+mvn test
+```
+Testikattavuusraportti saadaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Testikattavuusraportin voi avata myös selaimessa avaamalla tiedoston target/site/jacoco/index.html.
+
+
+
+
+
+
+
 
 
 

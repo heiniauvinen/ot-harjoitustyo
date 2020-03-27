@@ -42,10 +42,10 @@ public class Gui extends Application {
         buttons.setSpacing(10);
 
         Label category = new Label("Valitse kategoria seuraavista:");
-
+        
+        menu.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
         menu.setTop(category);
         menu.setCenter(buttons);
- //       menu.setBackground(new Background(new BackgroundFill(Color.PEACHPUFF, CornerRadii.EMPTY, Insets.EMPTY)));
 
         Scene mainMenu = new Scene(menu);
 
@@ -59,13 +59,13 @@ public class Gui extends Application {
 
         GridPane asettelu = new GridPane();
 
+        asettelu.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
         asettelu.add(instruction, 0, 0);
         asettelu.add(lower, 0, 1);
         asettelu.add(upper, 0, 2);
         asettelu.add(lowerChoice, 1, 1);
         asettelu.add(upperChoice, 1, 2);
         asettelu.add(ok, 1, 4);
- //       asettelu.setBackground(new Background(new BackgroundFill(Color.PEACHPUFF, CornerRadii.EMPTY, Insets.EMPTY)));
 
         Scene selectionScene = new Scene(asettelu);
 
@@ -84,12 +84,14 @@ public class Gui extends Application {
 
         Label rules = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
         Button ready = new Button("OK");
-        VBox questions = new VBox();
+        GridPane questions = new GridPane();
         exam.createPlusExam();
         ArrayList<Question> questionsArray = exam.getQuestions();
         for (int i = 0; i < questionsArray.size(); i++) {
-            Label question = new Label(questionsArray.get(i).toString());
-            questions.getChildren().add(question);
+            Label question = new Label(questionsArray.get(i).questionString());
+            questions.add(question, 0, i);
+            TextField answer = new TextField();
+            questions.add(answer, 1, i);
         }
 
         adjustment.setTop(rules);
@@ -100,7 +102,7 @@ public class Gui extends Application {
         Scene examScene = new Scene(adjustment);
 
         ok.setOnAction((event) -> {
-//            exam.setLimits(upperInt, lowerInt);
+//          exam.setLimits(upperInt, lowerInt);
             stage.setScene(examScene);
         });
 
