@@ -8,16 +8,17 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 ## Dokumentaatio
 
 [Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
+
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
 ## Testaus
 
-Testit voidaan suorittaa komennolla
+Testit on mahdollista suorittaa komennolla:
 
 ```
 mvn test
 ```
-Testikattavuusraportti saadaan komennolla
+Testikattavuusraportti saadaan komennolla:
 
 ```
 mvn jacoco:report
