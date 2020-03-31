@@ -17,11 +17,7 @@ Suoritetaan kansiossa MatematiikkaSovellus.
 
 ### Ohjelman ajaminen komentorivillä
 
-Komennoilla:
-
-```
-mvn compile
-```
+Komennolla:
 
 ```
 mvn compile exec:java -Dexec.mainClass=app.Matikkapeli
