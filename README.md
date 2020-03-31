@@ -11,7 +11,24 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
-## Testaus
+## Komentorivitoiminnot
+
+Suoritetaan kansiossa MatematiikkaSovellus.
+
+### Ohjelman ajaminen komentorivillä
+
+Komennoilla:
+
+```
+mvn compile
+```
+
+```
+mvn compile exec:java -Dexec.mainClass=app.Matikkapeli
+```
+
+
+### Testaus
 
 Testit on mahdollista suorittaa komennolla:
 
@@ -25,6 +42,16 @@ mvn jacoco:report
 ```
 
 Testikattavuusraportin voi avata myös selaimessa avaamalla tiedoston target/site/jacoco/index.html.
+
+### Suoritettavan jarin generointi
+
+Komennolla:
+
+```
+mvn package
+```
+
+
 
 
 
