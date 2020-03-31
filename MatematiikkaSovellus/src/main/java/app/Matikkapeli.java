@@ -26,7 +26,7 @@ public class Matikkapeli {
         for (int i = 0; i < questions.size(); i++) {
             System.out.println(questions.get(i));
         }
-        Gui.launch(Gui.class);
+        Gui.main(args);
 
     }
 
