@@ -9,4 +9,5 @@
 | 25.3. | 3    | Sovelluksen rungon fiksausta ja testin luonti | 
 | 26.3. | 2    | Sovelluslogiikan hiontaa | 
 | 27.3. | 1    | README.md päivitys |
-| yht   | 13   | |
+| 31.3. | 3    | Java 11 versioon päivittäminen |
+| yht   | 16   | |
