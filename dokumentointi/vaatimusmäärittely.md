@@ -15,11 +15,11 @@ Sovelluksesta tulee siis löytymään kolme näkymää:
 
 ## Sovelluksen tarjoama toiminnallisuus
 Käyttäjälle aukeaa harjoitusten valintaan tarkoitettu näkymä, josta käyttäjä voi valita, mitä hän haluaa harjoitella.
+Harjoituksen valittuaan käyttäjälle avautuu näkymä, jossa hän voi itse säädellä laskuharjoituksen vaativuustasoa.
 Valinnan jälkeen avautuu harjoitusnäkymä. Kun harjoitus on tehty loppuun, palataan automaattisesti valintanäkymään.
-Sovellus tarjoaa myös mahdollisuuden uloskirjautumiseen.
 
 ## Kehitysehdotuksia
 - Tulosten tarkastelu. Tulos -sivulla ohjelma näyttää käyttäjän parhaan tuloksen jokaisesta eri harjoituksesta. 
 - Useamman tuloksen tarkastelu. Tulos -sivulla näkyisi esimerkiksi kymmenen viimeisintä harjoituskertaa tietystä harjoituksesta. Tällöin kehityksen seuraaminen olisi helpompaa.
 - Ajanotto. Sovellus voisi säilyttää testien suoritukseen kuluvia aikoja.
-
+- Useampie erilaisten laskuharjoitusten lisäys. Esimerkiksi kerto- ja jakolaskut.
