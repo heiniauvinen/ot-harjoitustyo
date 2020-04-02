@@ -20,12 +20,7 @@ public class Matikkapeli {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Exam exam = new Exam();
-        exam.createPlusExam();
-        ArrayList<Question> questions = exam.getQuestions();
-        for (int i = 0; i < questions.size(); i++) {
-            System.out.println(questions.get(i));
-        }
+
         Gui.main(args);
 
     }

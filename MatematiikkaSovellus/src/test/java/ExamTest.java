@@ -4,8 +4,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.util.ArrayList;
 import logic.Exam;
 import logic.Question;
@@ -34,12 +32,22 @@ public class ExamTest {
 
     @Test
     public void creatingPlusQuestionsGivesQuestions() {
-        exam.createPlusExam();
-        ArrayList<Question> questions = exam.getQuestions();
+        exam.setToPlusMode();
+        ArrayList<Question> questions = exam.createAndGetQuestions();
         for (int i = 0; i < questions.size(); i++) {
             Question question = questions.get(i);
             assertEquals(question.getLeft() + question.getRight(), question.getResult());
         }
     }
-    
+
+    public void creatingMinusQuestionGivesQuestions() {
+        exam.setToMinusMode();
+        ArrayList<Question> questions = exam.createAndGetQuestions();
+        for (int i = 0; i < questions.size(); i++) {
+            Question question = questions.get(i);
+            assertEquals(question.getLeft() - question.getRight(), question.getResult());
+        }
+
+    }
+
 }

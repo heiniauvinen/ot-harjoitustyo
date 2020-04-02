@@ -29,6 +29,12 @@ import logic.Question;
 
 public class Gui extends Application {
 
+    Exam exam;
+
+    public void init() {
+        this.exam = new Exam();
+    }
+
     public void start(Stage stage) {
 
         // MAIN MENU NÄKYMÄ
@@ -42,7 +48,7 @@ public class Gui extends Application {
         buttons.setSpacing(10);
 
         Label category = new Label("Valitse kategoria seuraavista:");
-        
+
         menu.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
         menu.setTop(category);
         menu.setCenter(buttons);
@@ -57,53 +63,83 @@ public class Gui extends Application {
         TextField lowerChoice = new TextField();
         Button ok = new Button("OK");
 
-        GridPane asettelu = new GridPane();
+        GridPane grid = new GridPane();
 
-        asettelu.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
-        asettelu.add(instruction, 0, 0);
-        asettelu.add(lower, 0, 1);
-        asettelu.add(upper, 0, 2);
-        asettelu.add(lowerChoice, 1, 1);
-        asettelu.add(upperChoice, 1, 2);
-        asettelu.add(ok, 1, 4);
+        grid.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
+        grid.add(instruction, 0, 0);
+        grid.add(lower, 0, 1);
+        grid.add(upper, 0, 2);
+        grid.add(lowerChoice, 1, 1);
+        grid.add(upperChoice, 1, 2);
+        grid.add(ok, 1, 4);
 
-        Scene selectionScene = new Scene(asettelu);
+        Scene selectionScene = new Scene(grid);
 
         plus.setOnAction((event) -> {
+            exam.setToPlusMode();
             stage.setScene(selectionScene);
         });
         minus.setOnAction((event) -> {
+            exam.setToMinusMode();
             stage.setScene(selectionScene);
         });
 
-        // EXAM NÄKYMÄ
-        BorderPane adjustment = new BorderPane();
-        Exam exam = new Exam();
-//        int upperInt = Integer.parseInt(upperChoice.getText());
-//        int lowerInt = Integer.parseInt(lowerChoice.getText());
+        // EXAM NÄKYMÄ PLUS
+        BorderPane adjustmentPlus = new BorderPane();
 
         Label rules = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
         Button ready = new Button("OK");
-        GridPane questions = new GridPane();
-        exam.createPlusExam();
-        ArrayList<Question> questionsArray = exam.getQuestions();
-        for (int i = 0; i < questionsArray.size(); i++) {
-            Label question = new Label(questionsArray.get(i).questionString());
-            questions.add(question, 0, i);
-            TextField answer = new TextField();
-            questions.add(answer, 1, i);
-        }
+        GridPane plusQuestions = new GridPane();
 
-        adjustment.setTop(rules);
-        adjustment.setCenter(questions);
-        adjustment.setBottom(ready);
-        adjustment.setBackground(new Background(new BackgroundFill(Color.PAPAYAWHIP, CornerRadii.EMPTY, Insets.EMPTY)));
+        adjustmentPlus.setTop(rules);
+        adjustmentPlus.setCenter(plusQuestions);
+        adjustmentPlus.setBottom(ready);
+        adjustmentPlus.setBackground(new Background(new BackgroundFill(Color.PAPAYAWHIP, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        Scene examScene = new Scene(adjustment);
+        Scene examScenePlus = new Scene(adjustmentPlus);
 
+        // EXAM NÄKYMÄ MINUS
+        BorderPane adjustmentMinus = new BorderPane();
+
+        Label rules2 = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
+        Button readyMinus = new Button("OK");
+        GridPane minusQuestions = new GridPane();
+
+        adjustmentMinus.setTop(rules2);
+        adjustmentMinus.setCenter(minusQuestions);
+        adjustmentMinus.setBottom(readyMinus);
+        adjustmentMinus.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        Scene examSceneMinus = new Scene(adjustmentMinus);
+
+        // 
         ok.setOnAction((event) -> {
-//          exam.setLimits(upperInt, lowerInt);
-            stage.setScene(examScene);
+
+            exam.setLimits(upperChoice.getText(), lowerChoice.getText());
+            // Ennen jatkoa täytyy tarkistaa virheet
+
+            ArrayList<Question> questionsList = exam.createAndGetQuestions();
+
+            if (exam.getMode().equals("minus")) {
+
+                for (int i = 0; i < questionsList.size(); i++) {
+                    Label question = new Label(questionsList.get(i).questionString());
+                    minusQuestions.add(question, 0, i);
+                    TextField answer = new TextField();
+                    minusQuestions.add(answer, 1, i);
+                }
+                stage.setScene(examSceneMinus);
+            } else if (exam.getMode().equals("plus")) {
+
+                for (int i = 0; i < questionsList.size(); i++) {
+                    Label question = new Label(questionsList.get(i).questionString());
+                    plusQuestions.add(question, 0, i);
+                    TextField answer = new TextField();
+                    plusQuestions.add(answer, 1, i);
+                }
+                stage.setScene(examScenePlus);
+            }
+
         });
 
 //        

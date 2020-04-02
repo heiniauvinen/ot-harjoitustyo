@@ -20,12 +20,14 @@ public class Exam {
     ArrayList<Question> questions;
     ArrayList<Integer> answers;
     Random random;
+    String mode;
 
     public Exam() {
         this.upperLimit = 50;
         this.lowerLimit = 0;
         this.numberOfQuestions = 10;
         this.random = new Random();
+        this.mode = "plus";
     }
 
     public void createPlusExam() {
@@ -56,21 +58,47 @@ public class Exam {
         }
     }
 
-    public void plusQuestion() {
-
+    public ArrayList<Question> createAndGetQuestions() {
+        
+        if (mode.equals("plus")) {
+            createPlusExam();
+        }
+        if (mode.equals("minus")) {
+            createMinusExam();
+        }
+        
+        return questions;
     }
 
-    public void minusQuestion() {
+    public void setToPlusMode() {
+        this.mode = "plus";
+    }
 
+    public void setToMinusMode() {
+        this.mode = "minus";
+    }
+
+    public String getMode() {
+        return mode;
     }
 
     public int giveRandomNumber() {
-        int a = random.nextInt(upperLimit) +lowerLimit;
+        int a = random.nextInt(upperLimit - lowerLimit) + lowerLimit;
 
         return a;
     }
 
-    public String setLimits(int upper, int lower) {
+    public String setLimits(String upperText, String lowerText) {
+        int upper = 0;
+        int lower = 0;
+
+        try {
+            upper = Integer.parseInt(upperText);
+            lower = Integer.parseInt(lowerText);
+        } catch (NumberFormatException e) {
+            return "Virheellinen syöte!";
+        }
+
         if (upper < lower) {
             return "Ylärajan tulee olla suurempi kuin alarajan!";
         } else {
@@ -80,9 +108,5 @@ public class Exam {
         }
     }
 
-    public ArrayList<Question> getQuestions() {
-        return questions;
-    }
-  
 
 }
