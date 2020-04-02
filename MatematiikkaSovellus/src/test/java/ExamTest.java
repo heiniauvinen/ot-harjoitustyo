@@ -39,7 +39,8 @@ public class ExamTest {
             assertEquals(question.getLeft() + question.getRight(), question.getResult());
         }
     }
-
+    
+    @Test
     public void creatingMinusQuestionGivesQuestions() {
         exam.setToMinusMode();
         ArrayList<Question> questions = exam.createAndGetQuestions();

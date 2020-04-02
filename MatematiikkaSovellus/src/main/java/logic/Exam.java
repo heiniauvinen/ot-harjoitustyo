@@ -59,14 +59,14 @@ public class Exam {
     }
 
     public ArrayList<Question> createAndGetQuestions() {
-        
+
         if (mode.equals("plus")) {
             createPlusExam();
         }
         if (mode.equals("minus")) {
             createMinusExam();
         }
-        
+
         return questions;
     }
 
@@ -83,7 +83,7 @@ public class Exam {
     }
 
     public int giveRandomNumber() {
-        int a = random.nextInt(upperLimit - lowerLimit) + lowerLimit;
+        int a = random.nextInt(upperLimit - lowerLimit) + lowerLimit + 1;
 
         return a;
     }
@@ -107,6 +107,5 @@ public class Exam {
             return "OK";
         }
     }
-
 
 }
