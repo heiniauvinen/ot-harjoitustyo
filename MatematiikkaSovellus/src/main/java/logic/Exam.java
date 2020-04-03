@@ -91,14 +91,12 @@ public class Exam {
     public String setLimits(String upperText, String lowerText) {
         int upper = 0;
         int lower = 0;
-
         try {
             upper = Integer.parseInt(upperText);
             lower = Integer.parseInt(lowerText);
         } catch (NumberFormatException e) {
             return "Virheellinen syöte!";
         }
-
         if (upper < lower) {
             return "Ylärajan tulee olla suurempi kuin alarajan!";
         } else {

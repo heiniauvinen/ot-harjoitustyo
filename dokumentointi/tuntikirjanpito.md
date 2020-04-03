@@ -10,4 +10,6 @@
 | 26.3. | 2    | Sovelluslogiikan hiontaa | 
 | 27.3. | 1    | README.md päivitys |
 | 31.3. | 3    | Java 11 versioon päivittäminen |
-| yht   | 16   | |
+| 2.4.  | 2    | Ylä- ja alarajan käyttöönotto |
+| 2.4.  | 1    | Checkstyle käyttöönotto|
+| yht   | 19   | |
