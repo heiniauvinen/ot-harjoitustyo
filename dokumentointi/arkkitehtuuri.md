@@ -2,6 +2,8 @@
 
 ## Rakenne
 
+![Luokkakaavio](MatematiikkaSovellusluokkakaavio.jpg)
+
 ## Käyttöliittymä
 
 ## Sovelluslogiikka
