@@ -11,5 +11,7 @@
 | 27.3. | 1    | README.md päivitys |
 | 31.3. | 3    | Java 11 versioon päivittäminen |
 | 2.4.  | 2    | Ylä- ja alarajan käyttöönotto |
-| 2.4.  | 1    | Checkstyle käyttöönotto|
-| yht   | 19   | |
+| 2.4.  | 1    | Checkstyle käyttöönotto |
+| 3.4.  | 1    | arkkitehtuuri.md luonti & tuntikirjanpidon päivitys |
+| 4.4.  | 3    | Vähennyslaskutestille lisätty tarkistusominaisuus |
+| yht   | 23   | |
