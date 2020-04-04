@@ -9,6 +9,8 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
 
+[Arkkitehtuurikuvaus] (dokumentointi/arkkitehtuuri.md)
+
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot

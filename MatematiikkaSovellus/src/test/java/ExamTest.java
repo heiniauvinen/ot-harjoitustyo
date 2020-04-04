@@ -7,10 +7,7 @@
 import java.util.ArrayList;
 import logic.Exam;
 import logic.Question;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,7 +36,7 @@ public class ExamTest {
             assertEquals(question.getLeft() + question.getRight(), question.getResult());
         }
     }
-    
+
     @Test
     public void creatingMinusQuestionGivesQuestions() {
         exam.setToMinusMode();
@@ -49,6 +46,18 @@ public class ExamTest {
             assertEquals(question.getLeft() - question.getRight(), question.getResult());
         }
 
+    }
+
+    @Test
+    public void setToPlusModeWorksCorrectly() {
+        exam.setToPlusMode();
+        assertEquals(exam.getMode(), "plus");
+    }
+
+    @Test
+    public void setToMinusModeWorksCorrectly() {
+        exam.setToMinusMode();
+        assertEquals(exam.getMode(), "minus");
     }
 
 }
