@@ -14,4 +14,5 @@
 | 2.4.  | 1    | Checkstyle käyttöönotto |
 | 3.4.  | 1    | arkkitehtuuri.md luonti & tuntikirjanpidon päivitys |
 | 4.4.  | 3    | Vähennyslaskutestille lisätty tarkistusominaisuus |
+| 4.4.  | 1    | Luokkakaavion luonti & lisäys arkkitehtuuri.md |
 | yht   | 23   | |
