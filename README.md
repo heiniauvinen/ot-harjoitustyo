@@ -39,7 +39,7 @@ Testikattavuusraportti saadaan komennolla:
 mvn jacoco:report
 ```
 
-Testikattavuusraportin voi avata myös selaimessa avaamalla tiedoston target/site/jacoco/index.html.
+Testikattavuusraportin voi avata myös selaimessa avaamalla tiedoston _target/site/jacoco/index.html_
 
 ### Suoritettavan jarin generointi
 
@@ -49,7 +49,15 @@ Komennolla:
 mvn package
 ```
 
+### Checkstyle
 
+Tiedostoon [checkstyle.xml](MatematiikkaSovellus/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla:
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
 
 
 
