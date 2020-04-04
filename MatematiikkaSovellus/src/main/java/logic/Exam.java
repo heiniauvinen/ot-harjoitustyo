@@ -18,7 +18,7 @@ public class Exam {
     int lowerLimit;
     int numberOfQuestions;
     ArrayList<Question> questions;
-    ArrayList<Integer> answers;
+//    ArrayList<Integer> answers;
     Random random;
     String mode;
 
@@ -32,7 +32,6 @@ public class Exam {
 
     public void createPlusExam() {
         this.questions = new ArrayList<>();
-
         for (int i = 0; i < numberOfQuestions; i++) {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
@@ -44,7 +43,6 @@ public class Exam {
 
     public void createMinusExam() {
         this.questions = new ArrayList<>();
-
         for (int i = 0; i < numberOfQuestions; i++) {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
@@ -55,7 +53,6 @@ public class Exam {
     }
 
     public ArrayList<Question> createAndGetQuestions() {
-
         if (mode.equals("plus")) {
             createPlusExam();
         }
@@ -98,6 +95,10 @@ public class Exam {
             this.lowerLimit = lower;
             return "OK";
         }
+    }
+    
+    public ArrayList<Question> getQuestions() {
+        return questions;
     }
 
 }

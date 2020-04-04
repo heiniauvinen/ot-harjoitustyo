@@ -11,6 +11,8 @@ package ui;
  */
 import java.util.ArrayList;
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,15 +28,24 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import logic.Exam;
+import logic.Examiner;
 import logic.Question;
 
 public class Gui extends Application {
 
     Exam exam;
+    Examiner examiner;
+    ArrayList<String> studentAnswers;
+    ArrayList<TextField> textStudentAnswers;
+    private final StringProperty theResult = new SimpleStringProperty();
 
     @Override
     public void init() {
         this.exam = new Exam();
+        this.examiner = new Examiner();
+        this.studentAnswers = new ArrayList();
+        this.theResult.set("");
+
     }
 
     @Override
@@ -113,9 +124,13 @@ public class Gui extends Application {
         Button readyMinus = new Button("OK");
         Button backToSelectionMinus = new Button("Takaisin valintaan.");
         HBox minusButtons = new HBox();
+        Label result = new Label("tulos");
+        result.textProperty().bind(theResult);
         minusButtons.getChildren().add(readyMinus);
+        minusButtons.getChildren().add(result);
         minusButtons.getChildren().add(backToSelectionMinus);
-        minusButtons.setSpacing(150);
+        minusButtons.setSpacing(50);
+
         GridPane minusQuestions = new GridPane();
 
         adjustmentMinus.setTop(rules2);
@@ -132,13 +147,15 @@ public class Gui extends Application {
             // Ennen jatkoa täytyy tarkistaa virheet
 
             ArrayList<Question> questionsList = exam.createAndGetQuestions();
+            this.textStudentAnswers = new ArrayList();
 
             if (exam.getMode().equals("minus")) {
-
+                
                 for (int i = 0; i < questionsList.size(); i++) {
                     Label question = new Label(questionsList.get(i).questionString());
                     minusQuestions.add(question, 0, i);
                     TextField answer = new TextField();
+                    textStudentAnswers.add(answer);
                     minusQuestions.add(answer, 1, i);
                 }
                 stage.setScene(examSceneMinus);
@@ -148,6 +165,7 @@ public class Gui extends Application {
                     Label question = new Label(questionsList.get(i).questionString());
                     plusQuestions.add(question, 0, i);
                     TextField answer = new TextField();
+                    textStudentAnswers.add(answer);
                     plusQuestions.add(answer, 1, i);
                 }
                 stage.setScene(examScenePlus);
@@ -156,9 +174,12 @@ public class Gui extends Application {
         });
 
         readyMinus.setOnAction((event) -> {
-            Label tulos = new Label("TULOS");
-            minusButtons.getChildren().add(0, tulos);
-
+            this.studentAnswers = new ArrayList();
+            for (int i = 0; i < exam.getQuestions().size(); i++) {
+                String answer = textStudentAnswers.get(i).getText();
+                studentAnswers.add(answer);
+            }
+            theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)));
         });
 
 //        
