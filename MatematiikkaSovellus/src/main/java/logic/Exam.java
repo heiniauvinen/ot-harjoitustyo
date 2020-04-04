@@ -37,9 +37,7 @@ public class Exam {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
             int result = left + right;
-
             Question question = new Question(left, right, result, "+");
-
             questions.add(question);
         }
     }
@@ -51,9 +49,7 @@ public class Exam {
             int left = giveRandomNumber();
             int right = giveRandomNumber();
             int result = left - right;
-
             Question question = new Question(left, right, result, "-");
-
             questions.add(question);
         }
     }
@@ -66,7 +62,6 @@ public class Exam {
         if (mode.equals("minus")) {
             createMinusExam();
         }
-
         return questions;
     }
 
@@ -84,7 +79,6 @@ public class Exam {
 
     public int giveRandomNumber() {
         int a = random.nextInt(upperLimit - lowerLimit) + lowerLimit + 1;
-
         return a;
     }
 

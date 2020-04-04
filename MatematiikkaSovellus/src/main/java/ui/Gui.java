@@ -21,6 +21,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -31,10 +32,12 @@ public class Gui extends Application {
 
     Exam exam;
 
+    @Override
     public void init() {
         this.exam = new Exam();
     }
 
+    @Override
     public void start(Stage stage) {
 
         // MAIN MENU NÄKYMÄ
@@ -88,12 +91,17 @@ public class Gui extends Application {
         BorderPane adjustmentPlus = new BorderPane();
 
         Label rules = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
-        Button ready = new Button("OK");
+        Button readyPlus = new Button("OK");
+        Button backToSelectionPlus = new Button("Takaisin valintaan.");
+        HBox plusButtons = new HBox();
+        plusButtons.getChildren().add(readyPlus);
+        plusButtons.getChildren().add(backToSelectionPlus);
+        plusButtons.setSpacing(150);
         GridPane plusQuestions = new GridPane();
 
         adjustmentPlus.setTop(rules);
         adjustmentPlus.setCenter(plusQuestions);
-        adjustmentPlus.setBottom(ready);
+        adjustmentPlus.setBottom(plusButtons);
         adjustmentPlus.setBackground(new Background(new BackgroundFill(Color.PAPAYAWHIP, CornerRadii.EMPTY, Insets.EMPTY)));
 
         Scene examScenePlus = new Scene(adjustmentPlus);
@@ -103,11 +111,16 @@ public class Gui extends Application {
 
         Label rules2 = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
         Button readyMinus = new Button("OK");
+        Button backToSelectionMinus = new Button("Takaisin valintaan.");
+        HBox minusButtons = new HBox();
+        minusButtons.getChildren().add(readyMinus);
+        minusButtons.getChildren().add(backToSelectionMinus);
+        minusButtons.setSpacing(150);
         GridPane minusQuestions = new GridPane();
 
         adjustmentMinus.setTop(rules2);
         adjustmentMinus.setCenter(minusQuestions);
-        adjustmentMinus.setBottom(readyMinus);
+        adjustmentMinus.setBottom(minusButtons);
         adjustmentMinus.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
         Scene examSceneMinus = new Scene(adjustmentMinus);
@@ -140,6 +153,12 @@ public class Gui extends Application {
                 stage.setScene(examScenePlus);
             }
 
+        });
+
+        readyMinus.setOnAction((event) -> {
+            System.out.println("Painettiin OK!");
+            Label tulos = new Label("TULOS");
+            adjustmentMinus.setBottom(tulos);
         });
 
 //        
