@@ -156,9 +156,9 @@ public class Gui extends Application {
         });
 
         readyMinus.setOnAction((event) -> {
-            System.out.println("Painettiin OK!");
             Label tulos = new Label("TULOS");
-            adjustmentMinus.setBottom(tulos);
+            minusButtons.getChildren().add(0, tulos);
+
         });
 
 //        
