@@ -4,8 +4,6 @@
 
 ![Luokkakaavio](MatematiikkaSovellusluokkakaavio.jpg)
 
-## Käyttöliittymä
 
-## Sovelluslogiikka
 
 
