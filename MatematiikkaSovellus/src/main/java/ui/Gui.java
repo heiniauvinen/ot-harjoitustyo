@@ -105,9 +105,12 @@ public class Gui extends Application {
         Button readyPlus = new Button("OK");
         Button backToSelectionPlus = new Button("Takaisin valintaan.");
         HBox plusButtons = new HBox();
+        Label resultPlus = new Label("tulos");
+        resultPlus.textProperty().bind(theResult);
         plusButtons.getChildren().add(readyPlus);
+        plusButtons.getChildren().add(resultPlus);
         plusButtons.getChildren().add(backToSelectionPlus);
-        plusButtons.setSpacing(150);
+        plusButtons.setSpacing(50);
         GridPane plusQuestions = new GridPane();
 
         adjustmentPlus.setTop(rules);
@@ -120,20 +123,20 @@ public class Gui extends Application {
         // EXAM NÄKYMÄ MINUS
         BorderPane adjustmentMinus = new BorderPane();
 
-        Label rules2 = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
+        Label rulesMinus = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
         Button readyMinus = new Button("OK");
         Button backToSelectionMinus = new Button("Takaisin valintaan.");
         HBox minusButtons = new HBox();
-        Label result = new Label("tulos");
-        result.textProperty().bind(theResult);
+        Label resultMinus = new Label("tulos");
+        resultMinus.textProperty().bind(theResult);
         minusButtons.getChildren().add(readyMinus);
-        minusButtons.getChildren().add(result);
+        minusButtons.getChildren().add(resultMinus);
         minusButtons.getChildren().add(backToSelectionMinus);
         minusButtons.setSpacing(50);
 
         GridPane minusQuestions = new GridPane();
 
-        adjustmentMinus.setTop(rules2);
+        adjustmentMinus.setTop(rulesMinus);
         adjustmentMinus.setCenter(minusQuestions);
         adjustmentMinus.setBottom(minusButtons);
         adjustmentMinus.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -150,7 +153,7 @@ public class Gui extends Application {
             this.textStudentAnswers = new ArrayList();
 
             if (exam.getMode().equals("minus")) {
-                
+
                 for (int i = 0; i < questionsList.size(); i++) {
                     Label question = new Label(questionsList.get(i).questionString());
                     minusQuestions.add(question, 0, i);
@@ -159,6 +162,7 @@ public class Gui extends Application {
                     minusQuestions.add(answer, 1, i);
                 }
                 stage.setScene(examSceneMinus);
+
             } else if (exam.getMode().equals("plus")) {
 
                 for (int i = 0; i < questionsList.size(); i++) {
@@ -172,14 +176,31 @@ public class Gui extends Application {
             }
 
         });
-
+        
+// OK napit näyttävät tulokset
         readyMinus.setOnAction((event) -> {
             this.studentAnswers = new ArrayList();
             for (int i = 0; i < exam.getQuestions().size(); i++) {
                 String answer = textStudentAnswers.get(i).getText();
                 studentAnswers.add(answer);
             }
-            theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)));
+            theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)) + "/" + exam.getNumberOfQuestions());
+        });
+        readyPlus.setOnAction((event) -> {
+            this.studentAnswers = new ArrayList();
+            for (int i = 0; i < exam.getQuestions().size(); i++) {
+                String answer = textStudentAnswers.get(i).getText();
+                studentAnswers.add(answer);
+            }
+            theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)) + "/" + exam.getNumberOfQuestions());
+        });
+        
+// Takaisin valintaan nappien toiminta
+        backToSelectionMinus.setOnAction((event) -> {
+            stage.setScene(mainMenu);
+        });
+        backToSelectionPlus.setOnAction((event) -> {
+            stage.setScene(mainMenu);
         });
 
 //        

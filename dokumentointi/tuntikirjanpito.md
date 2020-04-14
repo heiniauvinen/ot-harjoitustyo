@@ -16,4 +16,5 @@
 | 4.4.  | 3    | Vähennyslaskutestille lisätty tarkistusominaisuus |
 | 4.4.  | 1    | Luokkakaavion luonti & lisäys arkkitehtuuri.md |
 | 5.4.  | 0,5  | Määrittelydokumenttiin lisätty sovelluksen edistyminen |
-| yht   | 26,5 | |
+| 13.4. | 1,5  | Yhteenlaskulle lisätty tarkastusominaisuus +pientä fiksailua. Määrittelydokumenttiin lisätty edistyminen. |
+| yht   | 28 | |

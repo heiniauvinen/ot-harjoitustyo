@@ -5,9 +5,6 @@
  */
 package app;
 
-import java.util.ArrayList;
-import logic.Exam;
-import logic.Question;
 import ui.Gui;
 
 /**

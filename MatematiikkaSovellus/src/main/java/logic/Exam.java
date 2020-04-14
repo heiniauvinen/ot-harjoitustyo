@@ -18,7 +18,6 @@ public class Exam {
     int lowerLimit;
     int numberOfQuestions;
     ArrayList<Question> questions;
-//    ArrayList<Integer> answers;
     Random random;
     String mode;
 
@@ -96,9 +95,12 @@ public class Exam {
             return "OK";
         }
     }
-    
+
+    public int getNumberOfQuestions() {
+        return numberOfQuestions;
+    }
+
     public ArrayList<Question> getQuestions() {
         return questions;
     }
-
 }
