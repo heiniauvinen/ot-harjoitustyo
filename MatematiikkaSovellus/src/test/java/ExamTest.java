@@ -45,7 +45,6 @@ public class ExamTest {
             Question question = questions.get(i);
             assertEquals(question.getLeft() - question.getRight(), question.getResult());
         }
-
     }
 
     @Test
@@ -58,6 +57,12 @@ public class ExamTest {
     public void setToMinusModeWorksCorrectly() {
         exam.setToMinusMode();
         assertEquals(exam.getMode(), "minus");
+    }
+    
+    @Test
+    public void questionToString() {
+        Question question = new Question(2,3,5,"+");
+        assertEquals(question.toString(), "2 + 3 = 5");
     }
 
 
