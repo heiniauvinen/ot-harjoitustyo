@@ -37,6 +37,7 @@ public class Gui extends Application {
     Examiner examiner;
     ArrayList<String> studentAnswers;
     ArrayList<TextField> textStudentAnswers;
+    ArrayList<Label> questionLabels;
     private final StringProperty theResult = new SimpleStringProperty();
 
     @Override
@@ -45,6 +46,7 @@ public class Gui extends Application {
         this.examiner = new Examiner();
         this.studentAnswers = new ArrayList();
         this.theResult.set("");
+        this.questionLabels = new ArrayList();
 
     }
 
@@ -151,11 +153,14 @@ public class Gui extends Application {
 
             ArrayList<Question> questionsList = exam.createAndGetQuestions();
             this.textStudentAnswers = new ArrayList();
-
+            theResult.set("");
+            questionLabels = new ArrayList();
+            
             if (exam.getMode().equals("minus")) {
 
                 for (int i = 0; i < questionsList.size(); i++) {
                     Label question = new Label(questionsList.get(i).questionString());
+                    questionLabels.add(question);
                     minusQuestions.add(question, 0, i);
                     TextField answer = new TextField();
                     textStudentAnswers.add(answer);
@@ -167,6 +172,7 @@ public class Gui extends Application {
 
                 for (int i = 0; i < questionsList.size(); i++) {
                     Label question = new Label(questionsList.get(i).questionString());
+                    questionLabels.add(question);
                     plusQuestions.add(question, 0, i);
                     TextField answer = new TextField();
                     textStudentAnswers.add(answer);
@@ -197,9 +203,15 @@ public class Gui extends Application {
         
 // Takaisin valintaan nappien toiminta
         backToSelectionMinus.setOnAction((event) -> {
+            questionLabels.forEach((question) -> {
+                minusQuestions.getChildren().remove(question);
+            });
             stage.setScene(mainMenu);
         });
         backToSelectionPlus.setOnAction((event) -> {
+            questionLabels.forEach((question) -> {
+                plusQuestions.getChildren().remove(question);
+            });
             stage.setScene(mainMenu);
         });
 

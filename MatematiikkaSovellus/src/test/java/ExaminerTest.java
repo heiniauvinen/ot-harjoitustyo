@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+import java.util.ArrayList;
+import logic.Exam;
+import logic.Examiner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,25 +19,20 @@ import static org.junit.Assert.*;
  * @author heiniauvinen
  */
 public class ExaminerTest {
-    
+
+    Examiner examiner;
+    ArrayList<Integer> answers;
+    Exam exam;
+
     public ExaminerTest() {
+
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
     @Before
     public void setUp() {
+        examiner = new Examiner();
     }
     
-    @After
-    public void tearDown() {
-    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
