@@ -60,4 +60,5 @@ public class ExamTest {
         assertEquals(exam.getMode(), "minus");
     }
 
+
 }

@@ -7,10 +7,8 @@
 import java.util.ArrayList;
 import logic.Exam;
 import logic.Examiner;
-import org.junit.After;
-import org.junit.AfterClass;
+import logic.Question;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,6 +21,7 @@ public class ExaminerTest {
     Examiner examiner;
     ArrayList<Integer> answers;
     Exam exam;
+    Question question;
 
     public ExaminerTest() {
 
@@ -31,12 +30,35 @@ public class ExaminerTest {
     @Before
     public void setUp() {
         examiner = new Examiner();
+        exam = new Exam();
+        answers = new ArrayList();
     }
-    
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+//    @Test
+//    public void checkExamWorksIfAnswersAreNull() {
+//        ArrayList<String> studentAnswers = new ArrayList();
+//        ArrayList<Question> questions = exam.createAndGetQuestions();
+//        for (int i = 0; i < 10; i++) {
+//            Question question = questions.get(i);
+//            answers.add(question.getResult());
+//            studentAnswers.add(null);
+//        }
+//        int result = 0;
+//        assertEquals(examiner.checkExam(studentAnswers, exam), result);
+//    }
+//
+//    @Test
+//    public void convertToIntegerWorks() {
+//        ArrayList<String> studentAnswers = new ArrayList();
+//        studentAnswers.add("1");
+//        Integer result = 1;
+//        assertEquals(examiner.convertToInteger(studentAnswers, 0), result);
+//        studentAnswers.add("2");
+//        Integer result2 = 2;
+//        assertEquals(examiner.convertToInteger(studentAnswers, 0), result2);
+//        studentAnswers.add("3");
+//        Integer result3 = 3;
+//        assertEquals(examiner.convertToInteger(studentAnswers, 0), result3);
+//    }
+
 }
