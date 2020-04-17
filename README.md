@@ -13,6 +13,10 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
+## Releaset
+
+[Viikko 5](https://github.com/heiniauvinen/ot-harjoitustyo/releases/tag/Viikko5)
+
 ## Komentorivitoiminnot
 
 Suoritetaan kansiossa MatematiikkaSovellus.
