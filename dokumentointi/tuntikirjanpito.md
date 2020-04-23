@@ -19,5 +19,6 @@
 | 13.4. | 1,5  | Yhteenlaskulle lisätty tarkastusominaisuus +pientä fiksailua. Määrittelydokumenttiin lisätty edistyminen. |
 | 17.4. | 4    | Testien lisäystä ja viikon 5 release |
 | 23.4. | 2    | JavaDoc lisätty & tehty kaikille luokille |
-| yht   | 30 | |
+| 23.4. | 3    | Aloitettu daojen ja tietokannan luominen |
+| yht   | 33 | |
 
