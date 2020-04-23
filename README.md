@@ -9,6 +9,8 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 ### Dokumentaatio
 
+[Käyttöohje](dokumentointi/kayttoohje.md)
+
 [Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
 
 [Arkkitehtuurikuvaus](dokumentointi/arkkitehtuuri.md)
