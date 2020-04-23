@@ -1,11 +1,13 @@
 
-# Matematiikkasovellus
+# Ohjelmistotekniikka, harjoitustyö
+
+## Matematiikkasovellus
 
 Sovellus tarjoaa mahdollisuuden harjoitella päässälaskutaitoja, yhteen- ja vähennyslaskuilla.
 Käyttäjä voi itse valita lukujen ala- ja ylärajan, jolloin vaikeustason määrittäminen on helppoa.
 Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
-## Dokumentaatio
+### Dokumentaatio
 
 [Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
 
@@ -13,15 +15,15 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
 
-## Releaset
+### Releaset
 
 [Viikko 5](https://github.com/heiniauvinen/ot-harjoitustyo/releases/tag/Viikko5)
 
-## Komentorivitoiminnot
+### Komentorivitoiminnot
 
 Suoritetaan kansiossa MatematiikkaSovellus.
 
-### Ohjelman ajaminen komentorivillä
+#### Ohjelman ajaminen komentorivillä
 
 Komennolla:
 
@@ -30,7 +32,7 @@ mvn compile exec:java -Dexec.mainClass=app.Matikkapeli
 ```
 
 
-### Testaus
+#### Testaus
 
 Testit on mahdollista suorittaa komennolla:
 
@@ -45,7 +47,7 @@ mvn jacoco:report
 
 Testikattavuusraportin voi avata myös selaimessa avaamalla tiedoston _target/site/jacoco/index.html_
 
-### Suoritettavan jarin generointi
+#### Suoritettavan jarin generointi
 
 Komennolla:
 
@@ -53,7 +55,7 @@ Komennolla:
 mvn package
 ```
 
-### Checkstyle
+#### Checkstyle
 
 Tiedostoon [checkstyle.xml](MatematiikkaSovellus/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla:
 
