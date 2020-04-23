@@ -20,5 +20,6 @@
 | 17.4. | 4    | Testien lisäystä ja viikon 5 release |
 | 23.4. | 2    | JavaDoc lisätty & tehty kaikille luokille |
 | 23.4. | 3    | Aloitettu daojen ja tietokannan luominen |
+| 23.4. | 1    | Käyttöohjeen luominen |
 | yht   | 33 | |
 

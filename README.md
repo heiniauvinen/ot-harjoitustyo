@@ -9,13 +9,13 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 ### Dokumentaatio
 
-[Käyttöohje](dokumentointi/kayttoohje.md)
+[Käyttöohje](dokumentaatio/kayttoohje.md)
 
-[Vaatimusmäärittely](dokumentointi/vaatimusmäärittely.md)
+[Vaatimusmäärittely](dokumentaatio/vaatimusmäärittely.md)
 
-[Arkkitehtuurikuvaus](dokumentointi/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
-[Työaikakirjanpito](dokumentointi/tuntikirjanpito.md)
+[Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
 
 ### Releaset
 
