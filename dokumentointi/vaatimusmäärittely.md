@@ -37,3 +37,6 @@ Valinnan jälkeen avautuu harjoitusnäkymä. Kun harjoitus on tehty loppuun, pal
 - Yhteenlaskutestiin lisätty toiminto, joka näyttää oikeiden vastausten lukumäärän, kun painaa OK -nappia.
 - Takaisin valintaan nappi toimii, muttei vielä nollaa edellisiä testejä.
 - Testien tulos näkyy nyt muodossa: "oikeat vastaukset / laskujen lukumäärä".
+
+### Viikko 6
+- Kysymysten lukumäärän saa nyt valita itse.
