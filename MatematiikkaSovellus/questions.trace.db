@@ -1,0 +1,66 @@
+2020-04-23 20:38:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE QUESTION (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    QUESTION VARCHAR(200),
+    ANSWER VARCHAR(200),
+)[*];"; expected "identifier"; SQL statement:
+CREATE TABLE Question (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(200),
+    answer VARCHAR(200),
+); [42001-200]
+2020-04-23 20:45:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE QUESTION (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    QUESTION VARCHAR(200),
+    ANSWER VARCHAR(200),
+)[*];"; expected "identifier"; SQL statement:
+CREATE TABLE Question (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(200),
+    answer VARCHAR(200),
+); [42001-200]
+2020-04-23 20:45:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 20:45:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 20:45:31 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 20:45:31 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 20:45:31 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE QUESTION (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    QUESTION VARCHAR(200),
+    ANSWER VARCHAR(200),
+)[*];"; expected "identifier"; SQL statement:
+CREATE TABLE Question (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(200),
+    answer VARCHAR(200),
+); [42001-200]
+2020-04-23 21:18:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:19 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:34 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:34 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:34 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]
+2020-04-23 21:18:34 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QUESTION" not found; SQL statement:
+INSERT INTO Question (question, answer) VALUES (?, ?) [42102-200]

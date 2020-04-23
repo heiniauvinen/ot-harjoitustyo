@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logic;
 
 /**
  * Tämä luokka on kysymysten hallinnointia varten.
+ *
  * @author heiniauvinen
  */
 public class Question {
@@ -15,9 +11,12 @@ public class Question {
     int right;
     int result;
     String type;
+    String answerText;
+    String questionText;
 
     /**
      * Luo uuden Question-olion.
+     *
      * @param left Kysymyksen vasen operandi.
      * @param right Kysymyksen oikea operandi.
      * @param result Kysymyksen vastaus.
@@ -28,6 +27,17 @@ public class Question {
         this.right = right;
         this.result = result;
         this.type = type;
+    }
+
+    /**
+     *
+     * @param questionText Merkkijonona kysymys.
+     * @param answerText Merkkijonona vastaus.
+     */
+    public Question(String questionText, String answerText) {
+        this.answerText = answerText;
+        this.questionText = questionText;
+        this.type = "general";
     }
 
     public int getLeft() {
@@ -49,10 +59,23 @@ public class Question {
 
     /**
      * Antaa Question olion kirjoitusasun ilman vastausta.
+     *
      * @return Olion kirjoitusasu.
      */
     public String questionString() {
-        return left + " " + type + " " + right + " = ";
+        if (!type.equals("general")) {
+            return left + " " + type + " " + right + " = ";
+        } else {
+            return questionText;
+        }
+    }
+
+    public String getAnswerText() {
+        return this.answerText;
+    }
+
+    public String getQuestionText() {
+        return questionString();
     }
 
 }
