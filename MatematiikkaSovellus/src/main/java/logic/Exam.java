@@ -10,6 +10,7 @@ import java.util.Random;
 
 /**
  * Tämä luokka on kokeiden luomista ja hallinnointia varten.
+ *
  * @author heiniauvinen
  */
 public class Exam {
@@ -28,6 +29,7 @@ public class Exam {
         this.random = new Random();
         this.mode = "plus";
     }
+
     /**
      * Luo yhteenlaskukokeen.
      */
@@ -41,7 +43,7 @@ public class Exam {
             questions.add(question);
         }
     }
-    
+
     /**
      * Luo vähennyslaskukokeen.
      */
@@ -55,9 +57,11 @@ public class Exam {
             questions.add(question);
         }
     }
+
     /**
-     * Luo kokeen perustuen koetyypin valintaan.
-     * Koetyyppi täytyy asettaa ensin setToPlusMode tai setToMinusMode metodeilla.
+     * Luo kokeen perustuen koetyypin valintaan. Koetyyppi täytyy asettaa ensin
+     * setToPlusMode tai setToMinusMode metodeilla.
+     *
      * @return Lista kysymysolioita.
      */
     public ArrayList<Question> createAndGetQuestions() {
@@ -76,16 +80,17 @@ public class Exam {
     public void setToPlusMode() {
         this.mode = "plus";
     }
-    
+
     /**
      * Asettaa kokeen tyypin vähennyslaskuksi.
      */
     public void setToMinusMode() {
         this.mode = "minus";
     }
-    
+
     /**
      * Kertoo kokeen tyypin merkkijonomuodossa.
+     *
      * @return Kokeen tyyppi.
      */
     public String getMode() {
@@ -94,15 +99,17 @@ public class Exam {
 
     /**
      * Arpoo numerot väliltä yläraja-alaraja.
+     *
      * @return Arvotun luvun kokonaislukuna (int).
      */
     public int giveRandomNumber() {
         int a = random.nextInt(upperLimit - lowerLimit) + lowerLimit + 1;
         return a;
     }
-    
+
     /**
      * Asettaa ala- ja ylärajan kokeen luvuille.
+     *
      * @param upperText Merkkijono ylärajaa varten.
      * @param lowerText Merkkijono alarajaa varten.
      * @return Merkkijono, joka kertoo virheestä tai onnistumisesta.
@@ -127,18 +134,40 @@ public class Exam {
 
     /**
      * Antaa kysymysten lukumäärän.
+     *
      * @return Kysymysten määrä kokonaislukuna (int).
      */
     public int getNumberOfQuestions() {
         return numberOfQuestions;
     }
-    
+
     /**
      * Antaa listan kysymysolioita.
+     *
      * @return Listan kysymysolioita.
      */
     public ArrayList<Question> getQuestions() {
         return questions;
     }
-    
+
+    /**
+     * Asettaa kysymysten lukumäärän 1-20.
+     * @param numberText Merkkijonona kysymysten lukumäärä.
+     * @return Merkkijono, joka kertoo onnistumisesta tai virheestä.
+     */
+    public String setNumberOfQuestions(String numberText) {
+        try {
+            int number = Integer.parseInt(numberText.trim());
+            if (number <= 20 && number > 0) {
+                this.numberOfQuestions = number;
+            } else {
+                return "Kysymysten määrä pitää olla välillä 1-20";
+            }
+            
+        } catch (NumberFormatException e) {
+            return "Virheellinen syöte!";
+        }
+        return "OK";
+    }
+
 }

@@ -7,6 +7,7 @@ package ui;
 
 /**
  * Tämä luokka on graafinen käyttöliittymä.
+ *
  * @author heiniauvinen
  */
 import java.util.ArrayList;
@@ -75,8 +76,10 @@ public class Gui extends Application {
         Label instruction = new Label("Kirjoita ala- ja yläraja laskutoimituksien tekijöille:");
         Label lower = new Label("Alaraja: ");
         Label upper = new Label("Yläraja: ");
+        Label numberOfQ = new Label("Kysymysten lukumäärä (1-20): ");
         TextField upperChoice = new TextField();
         TextField lowerChoice = new TextField();
+        TextField numberOfQuestions = new TextField();
         Button ok = new Button("OK");
 
         GridPane grid = new GridPane();
@@ -85,9 +88,11 @@ public class Gui extends Application {
         grid.add(instruction, 0, 0);
         grid.add(lower, 0, 1);
         grid.add(upper, 0, 2);
+        grid.add(numberOfQ, 0, 3);
         grid.add(lowerChoice, 1, 1);
         grid.add(upperChoice, 1, 2);
-        grid.add(ok, 1, 4);
+        grid.add(numberOfQuestions, 1, 3);
+        grid.add(ok, 1, 5);
 
         Scene selectionScene = new Scene(grid);
 
@@ -147,7 +152,7 @@ public class Gui extends Application {
 
         // 
         ok.setOnAction((event) -> {
-
+            exam.setNumberOfQuestions(numberOfQuestions.getText());
             exam.setLimits(upperChoice.getText(), lowerChoice.getText());
             // Ennen jatkoa täytyy tarkistaa virheet
 
@@ -155,7 +160,7 @@ public class Gui extends Application {
             this.textStudentAnswers = new ArrayList();
             theResult.set("");
             questionLabels = new ArrayList();
-            
+
             if (exam.getMode().equals("minus")) {
 
                 for (int i = 0; i < questionsList.size(); i++) {
@@ -182,7 +187,7 @@ public class Gui extends Application {
             }
 
         });
-        
+
 // OK napit näyttävät tulokset
         readyMinus.setOnAction((event) -> {
             this.studentAnswers = new ArrayList();
@@ -200,7 +205,7 @@ public class Gui extends Application {
             }
             theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)) + "/" + exam.getNumberOfQuestions());
         });
-        
+
 // Takaisin valintaan nappien toiminta
         backToSelectionMinus.setOnAction((event) -> {
             questionLabels.forEach((question) -> {
