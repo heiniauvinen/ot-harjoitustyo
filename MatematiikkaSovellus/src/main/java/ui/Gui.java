@@ -6,7 +6,7 @@
 package ui;
 
 /**
- *
+ * Tämä luokka on graafinen käyttöliittymä.
  * @author heiniauvinen
  */
 import java.util.ArrayList;

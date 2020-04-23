@@ -6,7 +6,7 @@
 package logic;
 
 /**
- *
+ * Tämä luokka on kysymysten hallinnointia varten.
  * @author heiniauvinen
  */
 public class Question {
@@ -16,6 +16,13 @@ public class Question {
     int result;
     String type;
 
+    /**
+     * Luo uuden Question-olion.
+     * @param left Kysymyksen vasen operandi.
+     * @param right Kysymyksen oikea operandi.
+     * @param result Kysymyksen vastaus.
+     * @param type Operaation tyyppi.
+     */
     public Question(int left, int right, int result, String type) {
         this.left = left;
         this.right = right;
@@ -40,6 +47,10 @@ public class Question {
         return left + " " + type + " " + right + " = " + result;
     }
 
+    /**
+     * Antaa Question olion kirjoitusasun ilman vastausta.
+     * @return Olion kirjoitusasu.
+     */
     public String questionString() {
         return left + " " + type + " " + right + " = ";
     }

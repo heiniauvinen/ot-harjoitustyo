@@ -8,7 +8,7 @@ package app;
 import ui.Gui;
 
 /**
- *
+ * Tämä luokka on sovelluksen käynnistystä varten.
  * @author heiniauvinen
  */
 public class Matikkapeli {

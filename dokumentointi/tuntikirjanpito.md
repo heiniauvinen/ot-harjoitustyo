@@ -18,4 +18,6 @@
 | 5.4.  | 0,5  | Määrittelydokumenttiin lisätty sovelluksen edistyminen |
 | 13.4. | 1,5  | Yhteenlaskulle lisätty tarkastusominaisuus +pientä fiksailua. Määrittelydokumenttiin lisätty edistyminen. |
 | 17.4. | 4    | Testien lisäystä ja viikon 5 release |
-| yht   | 28 | |
+| 23.4. | 2    | JavaDoc lisätty & tehty kaikille luokille |
+| yht   | 30 | |
+
