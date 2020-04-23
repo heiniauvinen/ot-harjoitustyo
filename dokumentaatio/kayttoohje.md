@@ -4,8 +4,9 @@ Lataa tiedosto [MatematiikkaSovellus-1.0-SNAPSHOT.jar](https://github.com/heinia
 
 ## Ohjelman käynnistäminen
 
+Sovellus käynnistetään komennolla:
 ```
-Sovellus käynnistetään komennolla java -jar MatematiikkaSovellus-1.0-SNAPSHOT.jar
+java -jar MatematiikkaSovellus-1.0-SNAPSHOT.jar
 ```
 
 ## Harjoituksen valinta
