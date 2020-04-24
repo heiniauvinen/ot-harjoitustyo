@@ -12,7 +12,7 @@
 
 ![Sekvenssikaavio1](kuvat/yhteenlasku.png)
 
-![Sekvenssikaavio2](kuvat/vahennyslasku.png)
+![Sekvenssikaavio2](kuvat/vahennyslaskutsekvenssikaavio.png)
 
 
 
