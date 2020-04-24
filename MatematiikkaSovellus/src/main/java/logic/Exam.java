@@ -1,11 +1,8 @@
 package logic;
 
-import dao.QuestionDao;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * Tämä luokka on kokeiden luomista ja hallinnointia varten.
@@ -20,7 +17,6 @@ public class Exam {
     ArrayList<Question> questions;
     Random random;
     String mode;
-    QuestionDao questionDao;
 
     public Exam() {
         this.upperLimit = 50;
@@ -28,8 +24,6 @@ public class Exam {
         this.numberOfQuestions = 10;
         this.random = new Random();
         this.mode = "plus";
-        this.questionDao = new QuestionDao();
-        this.questionDao.setDbFileName("questions");
     }
 
     /**
@@ -43,20 +37,6 @@ public class Exam {
             int result = left + right;
             Question question = new Question(left, right, result, "+");
             questions.add(question);
-            try {
-                questionDao.create(question);
-            } catch (SQLException ex) {
-                Logger.getLogger(Exam.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        ArrayList<Question> questionsDao;
-        try {
-            questionsDao = questionDao.list();
-            for (Question question : questionsDao) {
-                System.out.println(question.getQuestionText() + question.getAnswerText());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Exam.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

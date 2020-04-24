@@ -37,10 +37,8 @@ public class ExaminerTest {
     public void checkExamWorksIfAnswersAreNull() {
         ArrayList<String> studentAnswers = new ArrayList();
         ArrayList<Question> questions = exam.createAndGetQuestions();
-        for (int i = 0; i < 10; i++) {
-            Question question = questions.get(i);
-            answers.add(question.getResult());
-            studentAnswers.add(null);
+        for (int i = 0; i < questions.size(); i++) {
+            studentAnswers.add("harri");
         }
         int result = 0;
         assertEquals(examiner.checkExam(studentAnswers, exam), result);
