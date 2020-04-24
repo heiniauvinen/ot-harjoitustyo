@@ -13,7 +13,9 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -25,23 +27,31 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import logic.Exam;
 import logic.Examiner;
+import logic.PersonalExam;
+import logic.PersonalExaminer;
 import logic.Question;
 
 public class Gui extends Application {
 
     Exam exam;
     Examiner examiner;
+    PersonalExam personalExam;
     ArrayList<String> studentAnswers;
     ArrayList<TextField> textStudentAnswers;
+    ArrayList<TextArea> textAreaStudentAnswers;
     ArrayList<Label> questionLabels;
     private final StringProperty theResult = new SimpleStringProperty();
+    private final StringProperty thePersonalResult = new SimpleStringProperty();
+    private final StringProperty personalExamAlert = new SimpleStringProperty();
 
     @Override
     public void init() {
         this.exam = new Exam();
         this.examiner = new Examiner();
+        this.personalExam = new PersonalExam();
         this.studentAnswers = new ArrayList();
         this.theResult.set("");
+        this.thePersonalResult.set("");
         this.questionLabels = new ArrayList();
 
     }
@@ -55,10 +65,12 @@ public class Gui extends Application {
         VBox buttons = new VBox();
         Button plus = new Button("Yhteenlaskut");
         Button minus = new Button("Vähennyslaskut");
-        Button personalExamButton = new Button("Luo oma");
+        Button personalExamButton = new Button("Aloita oma koe");
+        Button createQuestionButton = new Button("Luo oma kysymys");
         buttons.getChildren().add(plus);
         buttons.getChildren().add(minus);
         buttons.getChildren().add(personalExamButton);
+        buttons.getChildren().add(createQuestionButton);
         buttons.setSpacing(20);
 
         Label category = new Label("Valitse kategoria seuraavista:");
@@ -100,6 +112,70 @@ public class Gui extends Application {
         minus.setOnAction((event) -> {
             exam.setToMinusMode();
             stage.setScene(selectionScene);
+        });
+
+        // OMAKOE NÄKYMÄ
+        BorderPane personalPane = new BorderPane();
+
+        Label rulesPersonal = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
+        Button readyPersonal = new Button("OK");
+        Button backToSelectionPersonal = new Button("Takaisin valintaan.");
+        HBox personalButtons = new HBox();
+        Label resultPersonal = new Label("tulos");
+        resultPersonal.textProperty().bind(thePersonalResult);
+        personalButtons.getChildren().add(readyPersonal);
+        personalButtons.getChildren().add(resultPersonal);
+        personalButtons.getChildren().add(backToSelectionPersonal);
+        personalButtons.setSpacing(50);
+
+        GridPane personalQuestions = new GridPane();
+
+        personalPane.setTop(rulesPersonal);
+        personalPane.setCenter(personalQuestions);
+        personalPane.setBottom(personalButtons);
+        personalPane.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        Scene examScenePersonal = new Scene(personalPane);
+
+        // OMAN KYSYMYKSEN LUONTIIN SCENE
+        Label instructionPersonal = new Label("Kirjoita oma kysymys-vastaus -pari ja paina tallenna.");
+        TextArea questionTextArea = new TextArea();
+        TextArea answerTextArea = new TextArea();
+        Button saveQuestionToDb = new Button("Tallenna kysymys.");
+        Tooltip questionTip = new Tooltip();
+        questionTip.setText("\nKirjoita kysymyksen teksti tähän.\n");
+        questionTextArea.setTooltip(questionTip);
+        Tooltip answerTip = new Tooltip();
+        answerTip.setText("\nKirjoita vastauksen teksti tähän.\n");
+        answerTextArea.setTooltip(answerTip);
+        Button backToSelectionFromDbSave = new Button("Takaisin valintaan.");
+        GridPane gridPersonal = new GridPane();
+
+        gridPersonal.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
+        gridPersonal.add(instructionPersonal, 0, 0);
+        gridPersonal.add(questionTextArea, 0, 2);
+        gridPersonal.add(answerTextArea, 1, 2);
+        gridPersonal.add(saveQuestionToDb, 0, 4);
+        Label alertLabel = new Label("");
+        alertLabel.textProperty().bind(personalExamAlert);
+        gridPersonal.add(alertLabel, 0, 5);
+        gridPersonal.add(backToSelectionFromDbSave, 7, 5);
+
+        Scene personalQuestionScene = new Scene(gridPersonal);
+
+        createQuestionButton.setOnAction((event) -> {
+            stage.setScene(personalQuestionScene);
+        });
+
+        saveQuestionToDb.setOnAction((event) -> {
+            String alert = personalExam.saveToDatabase(questionTextArea.getText(), answerTextArea.getText());
+            personalExamAlert.set(alert);
+            questionTextArea.setText("");
+            answerTextArea.setText("");
+
+        });
+        backToSelectionFromDbSave.setOnAction((event) -> {
+            stage.setScene(mainMenu);
         });
 
         // EXAM NÄKYMÄ PLUS
@@ -147,7 +223,27 @@ public class Gui extends Application {
 
         Scene examSceneMinus = new Scene(adjustmentMinus);
 
-        // 
+        //
+        personalExamButton.setOnAction((event) -> {
+            ArrayList<Question> questionsList = personalExam.getNewQuestions();
+            this.textAreaStudentAnswers = new ArrayList();
+            thePersonalResult.set("");
+            questionLabels = new ArrayList();
+
+            for (int i = 0; i < questionsList.size(); i++) {
+                Label question = new Label(questionsList.get(i).getQuestionText());
+                questionLabels.add(question);
+                personalQuestions.add(question, 0, i);
+                TextArea answer = new TextArea();
+                answer.setPrefHeight(50);
+                answer.setPrefWidth(400);
+                textAreaStudentAnswers.add(answer);
+                personalQuestions.add(answer, 2, i);
+            }
+            stage.setScene(examScenePersonal);
+
+        });
+
         ok.setOnAction((event) -> {
             exam.setNumberOfQuestions(numberOfQuestions.getText());
             exam.setLimits(upperChoice.getText(), lowerChoice.getText());
@@ -202,6 +298,15 @@ public class Gui extends Application {
             }
             theResult.set(String.valueOf(examiner.checkExam(studentAnswers, exam)) + "/" + exam.getNumberOfQuestions());
         });
+        readyPersonal.setOnAction((event) -> {
+            this.studentAnswers = new ArrayList();
+            for (int i = 0; i < personalExam.getCurrentExamQuestions().size(); i++) {
+                String answer = textAreaStudentAnswers.get(i).getText();
+                studentAnswers.add(answer);
+            }
+            thePersonalResult.set(String.valueOf((PersonalExaminer.checkExam(personalExam, studentAnswers)) + "/" + personalExam.getNumberOfCurrentExamQuestions()));
+
+        });
 
 // Takaisin valintaan nappien toiminta
         backToSelectionMinus.setOnAction((event) -> {
@@ -213,6 +318,12 @@ public class Gui extends Application {
         backToSelectionPlus.setOnAction((event) -> {
             questionLabels.forEach((question) -> {
                 plusQuestions.getChildren().remove(question);
+            });
+            stage.setScene(mainMenu);
+        });
+        backToSelectionPersonal.setOnAction((event) -> {
+            questionLabels.forEach((question) -> {
+                personalQuestions.getChildren().remove(question);
             });
             stage.setScene(mainMenu);
         });

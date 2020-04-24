@@ -49,6 +49,16 @@ public class Exam {
                 Logger.getLogger(Exam.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        ArrayList<Question> questionsDao;
+        try {
+            questionsDao = questionDao.list();
+            for (Question question : questionsDao) {
+                System.out.println(question.getQuestionText() + question.getAnswerText());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Exam.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -159,6 +169,7 @@ public class Exam {
 
     /**
      * Asettaa kysymysten lukumäärän 1-20.
+     *
      * @param numberText Merkkijonona kysymysten lukumäärä.
      * @return Merkkijono, joka kertoo onnistumisesta tai virheestä.
      */
@@ -170,7 +181,7 @@ public class Exam {
             } else {
                 return "Kysymysten määrä pitää olla välillä 1-20";
             }
-            
+
         } catch (NumberFormatException e) {
             return "Virheellinen syöte!";
         }

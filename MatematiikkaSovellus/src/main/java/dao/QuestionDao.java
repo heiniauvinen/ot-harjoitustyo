@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import logic.Question;
 
 /**
@@ -36,8 +35,8 @@ public class QuestionDao implements Dao<Question, Integer> {
     }
 
     @Override
-    public List<Question> list() throws SQLException {
-        List<Question> questions = new ArrayList();
+    public ArrayList<Question> list() throws SQLException {
+        ArrayList<Question> questions = new ArrayList();
         try (Connection connection = DriverManager.getConnection(dbPath, "sa", "")) {
             ResultSet rs;
             try (PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Question")) {

@@ -27,6 +27,7 @@ public class Question {
         this.right = right;
         this.result = result;
         this.type = type;
+        this.answerText = String.valueOf(result);
     }
 
     /**
@@ -35,8 +36,8 @@ public class Question {
      * @param answerText Merkkijonona vastaus.
      */
     public Question(String questionText, String answerText) {
-        this.answerText = answerText;
-        this.questionText = questionText;
+        this.answerText = answerText.trim();
+        this.questionText = questionText.trim();
         this.type = "general";
     }
 

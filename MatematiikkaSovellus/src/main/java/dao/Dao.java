@@ -1,7 +1,7 @@
 package dao;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Data Access Object rajapinta.
@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface Dao<T, K> {
     void create(T object) throws SQLException;
-    List<T> list() throws SQLException;
+    ArrayList<T> list() throws SQLException;
 }
