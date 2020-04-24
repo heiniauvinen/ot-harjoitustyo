@@ -13,3 +13,5 @@
 /MatematiikkaSovellus/target
 /MatematiikkaSovellus/nbproject/
 /MatematiikkaSovellus/*.db
+/MatematiikkaSovellus/*.mv.db
+/MatematiikkaSovellus/*.trace.db
