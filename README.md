@@ -67,6 +67,15 @@ Tiedostoon [checkstyle.xml](MatematiikkaSovellus/checkstyle.xml) määrittelemä
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
 
+#### JavaDoc
+
+JavaDoc generoidaan komennolla:
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocin voi avata selaimella avaamalla tiedoston _target/site/apidocs/index.html_.
 
 
 

@@ -55,9 +55,11 @@ public class Gui extends Application {
         VBox buttons = new VBox();
         Button plus = new Button("Yhteenlaskut");
         Button minus = new Button("Vähennyslaskut");
+        Button personalExamButton = new Button("Luo oma");
         buttons.getChildren().add(plus);
         buttons.getChildren().add(minus);
-        buttons.setSpacing(10);
+        buttons.getChildren().add(personalExamButton);
+        buttons.setSpacing(20);
 
         Label category = new Label("Valitse kategoria seuraavista:");
 
