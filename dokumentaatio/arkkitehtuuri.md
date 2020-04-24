@@ -2,17 +2,19 @@
 
 ## Rakenne
 
-![Luokkakaavio](MatematiikkaSovellusluokkakaavio.jpg)
+![Luokkakaavio](kuvat/MatematiikkaSovellusluokkakaavio.jpg)
 
 ## Sovelluslogiikka
 
 ### Päätoiminnallisuudet
 
-#### Yhteenlaskutestin luonti & tarkistus
+#### Yhteen- ja vähennyslaskutestin luonti & tarkistus
 
-![Sekvenssikaavio1](yhteenlasku.png)
+![Sekvenssikaavio1](kuvat/yhteenlasku.png)
 
-#### Vähennyslaskutestin luonti & tarkistus
+![Sekvenssikaavio2](kuvat/vahennyslasku.png)
+
+
 
 
 
