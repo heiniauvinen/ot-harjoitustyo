@@ -20,7 +20,7 @@ public class CreateDatabase {
             conn.prepareStatement("CREATE TABLE Question (\n"
                     + "    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n"
                     + "    question VARCHAR(200),\n"
-                    + "    answer VARCHAR(200),\n"
+                    + "    answer VARCHAR(200)\n"
                     + ");").executeUpdate();
         } catch (SQLException ex) {
 
