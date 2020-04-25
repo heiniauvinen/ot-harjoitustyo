@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-![Luokkakaavio](kuvat/MatemtiikkaSovellusluokkakaavio.jpg)
+![Luokkakaavio](kuvat/MatematiikkaSovellusluokkakaavio.jpg)
 
 ![Luokkakaavio1](kuvat/luokkakaavio.jpg)
 
