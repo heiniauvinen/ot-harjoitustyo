@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class PersonalExam {
 
-    ArrayList<Question> questions;
+    public ArrayList<Question> questions;
     int numberOfQuestions;
     QuestionDao questionDao;
     ArrayList<Question> examQuestions;
@@ -48,8 +48,10 @@ public class PersonalExam {
             return "Tietokantaan tallentaminen epäonnistui.";
         }
     }
+
     /**
      * Valitsee ja palauttaa uudet kysymykset.
+     *
      * @return Palauttaa uudet kysymykset listana.
      */
     public ArrayList<Question> getNewQuestions() {
@@ -64,13 +66,16 @@ public class PersonalExam {
 
         return examQuestions;
     }
+
     /**
      * Palauttaa tämän hetkisen kokeen kysymykset.
+     *
      * @return Tämän hetkisen kokeen kysymykset listana.
      */
     public ArrayList<Question> getCurrentExamQuestions() {
         return examQuestions;
     }
+
     public int getNumberOfCurrentExamQuestions() {
         return examQuestions.size();
     }

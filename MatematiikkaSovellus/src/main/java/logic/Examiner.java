@@ -36,10 +36,14 @@ public class Examiner {
     }
 
     /**
-     * Muuttaa käyttäjältä tulleen vastauksen merkkijonosta Integeriksi poistaen ensin alusta ja lopusta välilyönnit.
-     * @param studentAnswers Merkkijonoja sisältävä lista käyttäjän vastauksista.
+     * Muuttaa käyttäjältä tulleen vastauksen merkkijonosta Integeriksi poistaen
+     * ensin alusta ja lopusta välilyönnit.
+     *
+     * @param studentAnswers Merkkijonoja sisältävä lista käyttäjän
+     * vastauksista.
      * @param index Vastauksen indeksi listalla.
-     * @return Kyseisessä indeksissä oleva merkkijono muutettuna Integeriksi. Jos ei ole kokonaisluku, palautetaan null.
+     * @return Kyseisessä indeksissä oleva merkkijono muutettuna Integeriksi.
+     * Jos ei ole kokonaisluku, palautetaan null.
      */
     public Integer convertToInteger(ArrayList<String> studentAnswers, int index) {
         try {
@@ -51,8 +55,11 @@ public class Examiner {
     }
 
     /**
-     * Muodostaa listan vastauksista tämän luokan luokkamuuttujaan ArrayList Integer answers. 
-     * @param studentAnswers Merkkijonoja sisältävä lista käyttäjän vastauksista.
+     * Muodostaa listan vastauksista tämän luokan luokkamuuttujaan ArrayList
+     * Integer answers.
+     *
+     * @param studentAnswers Merkkijonoja sisältävä lista käyttäjän
+     * vastauksista.
      */
     public void convertAnswersToInt(ArrayList<String> studentAnswers) {
         this.answers = new ArrayList<>();

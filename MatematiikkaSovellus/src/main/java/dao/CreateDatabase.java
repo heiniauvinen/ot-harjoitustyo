@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @author heiniauvinen
  */
 public class CreateDatabase {
-    
+
     /**
      * Luodaan uusi tietokanta.
      */

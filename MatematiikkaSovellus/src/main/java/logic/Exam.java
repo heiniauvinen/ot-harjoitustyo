@@ -3,7 +3,6 @@ package logic;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 /**
  * Tämä luokka on kokeiden luomista ja hallinnointia varten.
  *

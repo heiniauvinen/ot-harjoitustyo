@@ -13,12 +13,11 @@ public class PersonalExaminer {
         int numberOfRightAnswers = 0;
         ArrayList<Question> currentExam = personalExam.getCurrentExamQuestions();
         for (int i = 0; i < currentExam.size(); i++) {
-            if(currentExam.get(i).getAnswerText().equals(studentAnswers.get(i).trim())) {
+            if (currentExam.get(i).getAnswerText().equals(studentAnswers.get(i).trim())) {
                 numberOfRightAnswers++;
             }
         }
         return numberOfRightAnswers;
     }
-    
 
 }
