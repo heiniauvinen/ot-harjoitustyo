@@ -2,7 +2,8 @@
 
 ## Rakenne
 
-![Luokkakaavio](kuvat/MatematiikkaSovellusluokkakaavio.jpg)
+![Luokkakaavio](kuvat/MatemtiikkaSovellusluokkakaavio.jpg)
+![Luokkakaavio1](kuvat/luokkakaavio.jpg)
 
 ## Sovelluslogiikka
 
@@ -14,6 +15,9 @@
 
 ![Sekvenssikaavio2](kuvat/vahennyslaskutsekvenssikaavio.png)
 
+#### Omien kysymysten luominen
+
+![Sekvenssikaavio3](kuvat/luoOmaKysymys.png)
 
 
 
