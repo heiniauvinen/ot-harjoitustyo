@@ -58,4 +58,5 @@ antaa itse luotuja kysymyksiä. Jos kysymyksiä on yli kymmenen, sovellus arpoo 
 - Tietokantaan voi tallentaa kysymyksiä ja tietokannasta voidaan palauttaa lista kysymyksistä.
 - _Luo oma kysymys_- ja _Aloita oma koe_ -toiminnot lisätty.
 - Oman kokeen tarkistustoiminto lisätty.
+- JavaDoc lisätty.
 
