@@ -3,6 +3,7 @@
 ## Rakenne
 
 ![Luokkakaavio](kuvat/MatemtiikkaSovellusluokkakaavio.jpg)
+
 ![Luokkakaavio1](kuvat/luokkakaavio.jpg)
 
 ## Sovelluslogiikka
