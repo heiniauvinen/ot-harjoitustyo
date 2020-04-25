@@ -34,10 +34,10 @@ public class PersonalExam {
 
     public String saveToDatabase(String questionText, String answerText) {
         if (questionText.trim().equals("")) {
-            return "Kysymyskentässä pitää olla testiä!";
+            return "Kysymyskentässä pitää olla tekstiä!";
         }
         if (answerText.trim().equals("")) {
-            return "Vastauskentässä pitää olla testiä!";
+            return "Vastauskentässä pitää olla tekstiä!";
         }
         Question question = new Question(questionText, answerText);
         try {
