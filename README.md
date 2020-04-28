@@ -59,6 +59,9 @@ Komennolla:
 mvn package
 ```
 
+Komentoa _mvn package_ tehdessä tulee varoituksia duplikaateista. Tämä johtuu siitä, että 
+Linux, Mac ja Windows -käyttäjärjestelmille ladataan javafx-graphics.
+
 #### Checkstyle
 
 Tiedostoon [checkstyle.xml](MatematiikkaSovellus/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla:
