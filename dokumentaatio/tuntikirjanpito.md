@@ -24,5 +24,6 @@
 | 24.4. | 2    | Tietokantaan tallentaminen lisätty. Tietokanta palauttaa listan kysymyksiä sitä kutsuttaessa. |
 | 24.4. | 2    | Oman kokeen luominen, teko ja tarkistus lisätty. |
 | 25.4. | 1    | Käyttöohjeen ja vaatimusmäärittelyn päivitys. |
-| yht   | 42 | |
+| 28.4. | 0,5  | Arkkitehtuurin ja README.md fiksailua |
+| yht   | 42,5 | |
 
