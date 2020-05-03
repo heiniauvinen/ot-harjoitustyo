@@ -20,6 +20,12 @@ public class QuestionDao implements Dao<Question, Integer> {
     public void setDbFileName(String fileName) {
         this.dbPath = "jdbc:h2:./" + fileName;
     }
+    
+    /**
+     * Luo kysymyksen tietokantaan.
+     * @param question Luotu kysymys.
+     * @throws SQLException Jos kysymystä ei voida tallentaa.
+     */
 
     @Override
     public void create(Question question) throws SQLException {
@@ -33,7 +39,12 @@ public class QuestionDao implements Dao<Question, Integer> {
         connection.close();
 
     }
-
+    
+    /**
+     * Palauttaa listan kysymyksiä tietokannasta.
+     * @return Lista kysymyksiä.
+     * @throws SQLException 
+     */
     @Override
     public ArrayList<Question> list() throws SQLException {
         ArrayList<Question> questions = new ArrayList();

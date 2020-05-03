@@ -24,6 +24,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import logic.Exam;
 import logic.Examiner;
@@ -50,6 +51,7 @@ public class Gui extends Application {
         this.examiner = new Examiner();
         this.personalExam = new PersonalExam();
         this.studentAnswers = new ArrayList();
+        this.textStudentAnswers = new ArrayList();
         this.theResult.set("");
         this.thePersonalResult.set("");
         this.questionLabels = new ArrayList();
@@ -59,21 +61,26 @@ public class Gui extends Application {
     @Override
     public void start(Stage stage) {
 
-        // MAIN MENU NÄKYMÄ
+        //Main menu
         BorderPane menu = new BorderPane();
 
         VBox buttons = new VBox();
+        Label description1 = new Label("Harjoittele yhteen- tai vähennyslaskuja:");
         Button plus = new Button("Yhteenlaskut");
         Button minus = new Button("Vähennyslaskut");
+        Label description2 = new Label("Luo ja tee oma koe:");
         Button personalExamButton = new Button("Aloita oma koe");
         Button createQuestionButton = new Button("Luo oma kysymys");
+        buttons.getChildren().add(description1);
         buttons.getChildren().add(plus);
         buttons.getChildren().add(minus);
+        buttons.getChildren().add(description2);
         buttons.getChildren().add(personalExamButton);
         buttons.getChildren().add(createQuestionButton);
-        buttons.setSpacing(20);
+        buttons.setSpacing(15);
 
         Label category = new Label("Valitse kategoria seuraavista:");
+        category.setFont(new Font("Arial", 17));
 
         menu.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
         menu.setTop(category);
@@ -140,7 +147,11 @@ public class Gui extends Application {
         // OMAN KYSYMYKSEN LUONTIIN SCENE
         Label instructionPersonal = new Label("Kirjoita oma kysymys-vastaus -pari ja paina tallenna.");
         TextArea questionTextArea = new TextArea();
+        questionTextArea.setPrefHeight(100);
+        questionTextArea.setPrefWidth(400);
         TextArea answerTextArea = new TextArea();
+        answerTextArea.setPrefHeight(100);
+        answerTextArea.setPrefWidth(400);
         Button saveQuestionToDb = new Button("Tallenna kysymys.");
         Tooltip questionTip = new Tooltip();
         questionTip.setText("\nKirjoita kysymyksen teksti tähän.\n");
@@ -151,7 +162,7 @@ public class Gui extends Application {
         Button backToSelectionFromDbSave = new Button("Takaisin valintaan.");
         GridPane gridPersonal = new GridPane();
 
-        gridPersonal.setBackground(new Background(new BackgroundFill(Color.SEASHELL, CornerRadii.EMPTY, Insets.EMPTY)));
+        gridPersonal.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
         gridPersonal.add(instructionPersonal, 0, 0);
         gridPersonal.add(questionTextArea, 0, 2);
         gridPersonal.add(answerTextArea, 1, 2);
@@ -159,7 +170,7 @@ public class Gui extends Application {
         Label alertLabel = new Label("");
         alertLabel.textProperty().bind(personalExamAlert);
         gridPersonal.add(alertLabel, 0, 5);
-        gridPersonal.add(backToSelectionFromDbSave, 7, 5);
+        gridPersonal.add(backToSelectionFromDbSave, 0, 6);
 
         Scene personalQuestionScene = new Scene(gridPersonal);
 
@@ -247,10 +258,9 @@ public class Gui extends Application {
         ok.setOnAction((event) -> {
             exam.setNumberOfQuestions(numberOfQuestions.getText());
             exam.setLimits(upperChoice.getText(), lowerChoice.getText());
-            // Ennen jatkoa täytyy tarkistaa virheet
 
             ArrayList<Question> questionsList = exam.createAndGetQuestions();
-            this.textStudentAnswers = new ArrayList();
+            textStudentAnswers = new ArrayList();
             theResult.set("");
             questionLabels = new ArrayList();
 
@@ -281,7 +291,6 @@ public class Gui extends Application {
 
         });
 
-// OK napit näyttävät tulokset
         readyMinus.setOnAction((event) -> {
             this.studentAnswers = new ArrayList();
             for (int i = 0; i < exam.getQuestions().size(); i++) {
@@ -308,16 +317,21 @@ public class Gui extends Application {
 
         });
 
-// Takaisin valintaan nappien toiminta
         backToSelectionMinus.setOnAction((event) -> {
             questionLabels.forEach((question) -> {
                 minusQuestions.getChildren().remove(question);
+            });
+            textStudentAnswers.forEach((answer) -> {
+                minusQuestions.getChildren().remove(answer);
             });
             stage.setScene(mainMenu);
         });
         backToSelectionPlus.setOnAction((event) -> {
             questionLabels.forEach((question) -> {
                 plusQuestions.getChildren().remove(question);
+            });
+            textStudentAnswers.forEach((answer) -> {
+                plusQuestions.getChildren().remove(answer);
             });
             stage.setScene(mainMenu);
         });

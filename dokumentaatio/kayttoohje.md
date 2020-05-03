@@ -11,10 +11,14 @@ java -jar MatematiikkaSovellus-1.0-SNAPSHOT.jar
 
 ## Harjoituksen valinta
 
+![Valintanäkymä](kuvat/mainmenu.png)
+
 Sovellus käynnistyy näkymään, jossa käyttäjä voi valita harjoituksen. 
 Harjoitus valitaan painamalla sitä nappia, jonka haluaa suorittaa.
 
 ## Yhteen- ja vähennyslaskuharjoituksen asetukset
+
+![Asetukset](kuvat/valintanäkymä1.png)
 
 Harjoituksen valinnan jälkeen aukeaa näkymä, jossa käyttäjä voi asettaa 
 harjoituksen luvuille ylä- ja alarajan, jolloin tällä on mahdollisuus 
@@ -32,12 +36,14 @@ Käyttäjä pääsee takaisin harjoituksen valintaan painamalla Takaisin valinta
  
 ## Oman kokeen luominen
 
+
 Oman kokeen luonti tapahtuu aloitusnäkmässä painamalla "Luo oma kysymys" -nappia.
 Näin aukeaa näkymä, jossa käyttäjä voi tallettaa omia kysymyksiä tietokantaan. 
 Jos kysymys- tai vastauskohdassa ei ole tekstiä, tietokantaan ei tallenneta kysymystä, ja sovellus varoittaa tästä.
 Takaisin valintaan -nappia painamalla pääset takaisin aloitussivulle.
 Tietokanta ei säilytä kysymyksiä, vaan jokaisella sovelluksen avauskerralla tulee luoda uudet kysymykset.
 
+![Kysymyksen luominen](kuvat/omakysymys.png)
 
 ## Oman kokeen tekeminen
 

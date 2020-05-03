@@ -25,5 +25,6 @@
 | 24.4. | 2    | Oman kokeen luominen, teko ja tarkistus lisätty. |
 | 25.4. | 1    | Käyttöohjeen ja vaatimusmäärittelyn päivitys. |
 | 28.4. | 0,5  | Arkkitehtuurin ja README.md fiksailua |
+| 3.5.  | 1    | Käyttöohjeen täydennystä ja sovelluksen ulkoasun fiksailua. |
 | yht   | 42,5 | |
 

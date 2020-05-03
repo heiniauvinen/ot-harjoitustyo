@@ -9,6 +9,13 @@ import java.util.ArrayList;
  */
 public class PersonalExaminer {
 
+    /**
+     * Tarkistaa itse luodun kokeen.
+     *
+     * @param personalExam Kyseinen koe.
+     * @param studentAnswers Lista käyttäjän vastauksista.
+     * @return Oikeiden vastausten lukumäärän.
+     */
     public static int checkExam(PersonalExam personalExam, ArrayList<String> studentAnswers) {
         int numberOfRightAnswers = 0;
         ArrayList<Question> currentExam = personalExam.getCurrentExamQuestions();

@@ -32,6 +32,14 @@ public class PersonalExam {
         }
     }
 
+    /**
+     * Tarkistaa onko kysymys- ja vastauskentässä tekstiä ja tallentaa
+     * kysymyksen tietokantaan jos mahdollista.
+     *
+     * @param questionText Tekstikentän kysymys.
+     * @param answerText Tekstikentässä kysymykselle annettu vastaus.
+     * @return Tietokantaan tallentamisen onnistuminen tai epäonnistuminen.
+     */
     public String saveToDatabase(String questionText, String answerText) {
         if (questionText.trim().equals("")) {
             return "Kysymyskentässä pitää olla tekstiä!";
