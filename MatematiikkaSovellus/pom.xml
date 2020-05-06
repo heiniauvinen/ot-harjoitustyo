@@ -64,6 +64,7 @@
                 <configuration>
                     <excludes>
                         <exclude>ui/**/*</exclude>
+                        <exclude>app/**/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

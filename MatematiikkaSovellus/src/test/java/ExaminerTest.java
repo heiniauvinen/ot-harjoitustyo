@@ -43,9 +43,20 @@ public class ExaminerTest {
         int result = 0;
         assertEquals(examiner.checkExam(studentAnswers, exam), result);
     }
-    
+
     @Test
-    
+    public void checkExamWorks() {
+        ArrayList<String> studentAnswers = new ArrayList();
+        exam.setToPlusMode();
+        exam.setLimits("30", "1");
+        ArrayList<Question> questions = exam.createAndGetQuestions();
+        studentAnswers.add("-1");
+        for (int i = 1; i < questions.size(); i++) {
+            studentAnswers.add(String.valueOf(questions.get(i).getResult()));
+        }
+        
+        assertEquals(exam.getNumberOfQuestions() -1, examiner.checkExam(studentAnswers, exam));
+    }
 
     @Test
     public void convertToIntegerWorks() {
