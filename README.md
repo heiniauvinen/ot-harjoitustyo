@@ -15,6 +15,8 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentti](dokumentaatio/testausdokumentti.md)
+
 [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
 
 ### Releaset
