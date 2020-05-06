@@ -11,14 +11,14 @@ java -jar MatematiikkaSovellus-1.0-SNAPSHOT.jar
 
 ## Harjoituksen valinta
 
-![Valintanäkymä](kuvat/mainmenu.png)
+![Valintanäkymä](kuvat/valikko.png)
 
 Sovellus käynnistyy näkymään, jossa käyttäjä voi valita harjoituksen. 
 Harjoitus valitaan painamalla sitä nappia, jonka haluaa suorittaa.
 
 ## Yhteen- ja vähennyslaskuharjoituksen asetukset
 
-![Asetukset](kuvat/valintanäkymä1.png)
+![Asetukset](kuvat/valintanäkymä.png)
 
 Harjoituksen valinnan jälkeen aukeaa näkymä, jossa käyttäjä voi asettaa 
 harjoituksen luvuille ylä- ja alarajan, jolloin tällä on mahdollisuus 

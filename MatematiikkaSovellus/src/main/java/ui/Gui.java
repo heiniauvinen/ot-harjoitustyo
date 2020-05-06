@@ -61,7 +61,6 @@ public class Gui extends Application {
     @Override
     public void start(Stage stage) {
 
-        //Main menu
         BorderPane menu = new BorderPane();
 
         VBox buttons = new VBox();
@@ -88,7 +87,6 @@ public class Gui extends Application {
 
         Scene mainMenu = new Scene(menu);
 
-        // SEURAAVA NÄKYMÄ VALINNAT
         Label instruction = new Label("Kirjoita ala- ja yläraja laskutoimituksien tekijöille:");
         Label lower = new Label("Alaraja: ");
         Label upper = new Label("Yläraja: ");
@@ -121,7 +119,6 @@ public class Gui extends Application {
             stage.setScene(selectionScene);
         });
 
-        // OMAKOE NÄKYMÄ
         BorderPane personalPane = new BorderPane();
 
         Label rulesPersonal = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
@@ -144,7 +141,6 @@ public class Gui extends Application {
 
         Scene examScenePersonal = new Scene(personalPane);
 
-        // OMAN KYSYMYKSEN LUONTIIN SCENE
         Label instructionPersonal = new Label("Kirjoita oma kysymys-vastaus -pari ja paina tallenna.");
         TextArea questionTextArea = new TextArea();
         questionTextArea.setPrefHeight(100);
@@ -189,7 +185,6 @@ public class Gui extends Application {
             stage.setScene(mainMenu);
         });
 
-        // EXAM NÄKYMÄ PLUS
         BorderPane adjustmentPlus = new BorderPane();
 
         Label rules = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
@@ -211,7 +206,6 @@ public class Gui extends Application {
 
         Scene examScenePlus = new Scene(adjustmentPlus);
 
-        // EXAM NÄKYMÄ MINUS
         BorderPane adjustmentMinus = new BorderPane();
 
         Label rulesMinus = new Label("Tee seuraavat tehtävät. Kun olet valmis, paina OK!");
@@ -234,7 +228,6 @@ public class Gui extends Application {
 
         Scene examSceneMinus = new Scene(adjustmentMinus);
 
-        //
         personalExamButton.setOnAction((event) -> {
             ArrayList<Question> questionsList = personalExam.getNewQuestions();
             this.textAreaStudentAnswers = new ArrayList();
@@ -338,6 +331,9 @@ public class Gui extends Application {
         backToSelectionPersonal.setOnAction((event) -> {
             questionLabels.forEach((question) -> {
                 personalQuestions.getChildren().remove(question);
+            });
+            textAreaStudentAnswers.forEach((answer) -> {
+                personalQuestions.getChildren().remove(answer);
             });
             stage.setScene(mainMenu);
         });

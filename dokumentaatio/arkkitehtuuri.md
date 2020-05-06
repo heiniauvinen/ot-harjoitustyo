@@ -25,6 +25,18 @@ ja tarkistaa ne.
 
 Omien kysymysten luominen ja tallentaminen tietokantaan tapahtuu ylläolevan sekvenssikaavion mukaisesti.
 
+## Tietojen tallennus
+
+Pakkauksen _dao_ luokka _CreateDatabase_ luo uuden tietokannan jokaisella sovelluksen käynnistyskerralla. 
+Luokka _QuestionDao_ huolehtii kysymysten tallennuksesta ja tietokannasta lukemisesta.
+Luokat noudattavat Data Access Object -suunnittelumallia. 
+
+### Tietokanta
+
+Uusi tietokanta luodaan jokaisella sovelluksen käynnistyskerralla, 
+ja vanha poistetaan. 
+Tietokantaan tallennetaan kysymys-vastaus -pareja.
+Tietokantaan voidaan tallentaa dataa ja sieltä palautetaan lista kysymyksiä.
 
 
 
