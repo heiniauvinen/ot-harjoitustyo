@@ -2,9 +2,17 @@
 
 ## Rakenne
 
-![Luokkakaavio](kuvat/MatematiikkaSovellusluokkakaavio.jpg)
+Sovelluksen pakkausrakenne on seuraava: 
+
+- Pakkaus _ui_ sisältää sovelluksen graafisen käyttöliittymän.
+- Pakkaus _dao_ sisältää pysyväistallennuksesta huolehtivan koodin.
+- Pakkaus _logic_ sisältää sovelluslogiikan.
 
 ![Luokkakaavio1](kuvat/luokkakaavio.jpg)
+
+## Käyttöliittymä
+
+Käyttöliittymä sisältää seitsemän erilaista näkymää.
 
 ## Sovelluslogiikka
 
@@ -27,15 +35,13 @@ Omien kysymysten luominen ja tallentaminen tietokantaan tapahtuu ylläolevan sek
 
 ## Tietojen tallennus
 
-Pakkauksen _dao_ luokka _CreateDatabase_ luo uuden tietokannan jokaisella sovelluksen käynnistyskerralla. 
+Pakkauksen _dao_ luokka _CreateDatabase_ luo uuden tietokannan sovelluksen ensimmäisellä käynnistyskerralla. 
 Luokka _QuestionDao_ huolehtii kysymysten tallennuksesta ja tietokannasta lukemisesta.
 Luokat noudattavat Data Access Object -suunnittelumallia. 
 
 ### Tietokanta
-
-Uusi tietokanta luodaan jokaisella sovelluksen käynnistyskerralla, 
-ja vanha poistetaan. 
-Tietokantaan tallennetaan kysymys-vastaus -pareja.
+ 
+Tietokantaan tallennetaan kysymys-vastaus -pareja kysymysten luontiin tarkoitetussa näkymässä.
 Tietokantaan voidaan tallentaa dataa ja sieltä palautetaan lista kysymyksiä.
 
 

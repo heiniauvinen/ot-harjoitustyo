@@ -41,7 +41,7 @@ Oman kokeen luonti tapahtuu aloitusnäkmässä painamalla "Luo oma kysymys" -nap
 Näin aukeaa näkymä, jossa käyttäjä voi tallettaa omia kysymyksiä tietokantaan. 
 Jos kysymys- tai vastauskohdassa ei ole tekstiä, tietokantaan ei tallenneta kysymystä, ja sovellus varoittaa tästä.
 Takaisin valintaan -nappia painamalla pääset takaisin aloitussivulle.
-Tietokanta ei säilytä kysymyksiä, vaan jokaisella sovelluksen avauskerralla tulee luoda uudet kysymykset.
+Tietokanta säilyttää vanhat kysymykset, joten aloittamalla oman kokeen voit harjoitella myös aiemmin luotuja omia kysymyksiä.
 
 ![Kysymyksen luominen](kuvat/omakysymys.png)
 
