@@ -30,6 +30,7 @@ public class ExamTest {
     @Test
     public void creatingPlusQuestionsGivesQuestions() {
         exam.setToPlusMode();
+        exam.setLimits("20", "1");
         ArrayList<Question> questions = exam.createAndGetQuestions();
         for (int i = 0; i < questions.size(); i++) {
             Question question = questions.get(i);
@@ -63,6 +64,12 @@ public class ExamTest {
     public void questionToString() {
         Question question = new Question(2,3,5,"+");
         assertEquals(question.toString(), "2 + 3 = 5");
+    }
+    
+    @Test
+    public void setAndgetNumberOfQuestonsWorks() {
+        exam.setNumberOfQuestions("3");
+        assertEquals(exam.getNumberOfQuestions(), 3);
     }
 
 

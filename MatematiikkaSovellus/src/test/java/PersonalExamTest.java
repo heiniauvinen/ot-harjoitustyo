@@ -5,17 +5,12 @@
  */
 
 import dao.CreateDatabase;
-import dao.QuestionDao;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import logic.PersonalExam;
 import logic.PersonalExaminer;
 import logic.Question;
-
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -51,7 +46,7 @@ public class PersonalExamTest {
 
     @Before
     public void setUp() {
-        CreateDatabase.createDatabase();
+        CreateDatabase.dropTableAndCreateDatabase("testDatabase");
         personalExam = new PersonalExam();
     }
 

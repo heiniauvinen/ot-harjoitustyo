@@ -16,9 +16,9 @@ import logic.Question;
 public class QuestionDao implements Dao<Question, Integer> {
 
     String dbPath;
-
-    public void setDbFileName(String fileName) {
-        this.dbPath = "jdbc:h2:./" + fileName;
+    
+    public QuestionDao() {
+        this.dbPath = "jdbc:h2:./" + CreateDatabase.getDbFileName();
     }
     
     /**

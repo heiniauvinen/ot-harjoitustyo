@@ -43,6 +43,9 @@ public class ExaminerTest {
         int result = 0;
         assertEquals(examiner.checkExam(studentAnswers, exam), result);
     }
+    
+    @Test
+    
 
     @Test
     public void convertToIntegerWorks() {

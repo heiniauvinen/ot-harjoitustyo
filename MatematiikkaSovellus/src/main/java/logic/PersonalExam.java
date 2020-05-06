@@ -22,7 +22,6 @@ public class PersonalExam {
     public PersonalExam() {
         this.questions = new ArrayList();
         this.questionDao = new QuestionDao();
-        this.questionDao.setDbFileName("questions");
         this.numberOfQuestions = 10;
 
         try {
