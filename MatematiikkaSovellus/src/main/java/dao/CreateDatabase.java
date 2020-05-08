@@ -20,6 +20,8 @@ public class CreateDatabase {
 
     /**
      * Avataan aiemmin luotu tietokanta tai luodaan uusi, jos sellaista ei ole.
+     *
+     * @param dbFileName Tietokannan nimi.
      */
     public static void createDatabase(String dbFileName) {
         CreateDatabase.dbFileName = dbFileName;
@@ -30,6 +32,11 @@ public class CreateDatabase {
         }
     }
 
+    /**
+     * Tietokantaan liittyviä testejä varten luotu metodi.
+     *
+     * @param dbFileName Tietokannan nimi.
+     */
     public static void dropTableAndCreateDatabase(String dbFileName) {
         CreateDatabase.dbFileName = dbFileName;
         try (Connection conn = DriverManager.getConnection("jdbc:h2:./" + dbFileName, "sa", "")) {
@@ -39,7 +46,7 @@ public class CreateDatabase {
 
         }
     }
-
+    
     public static String getDbFileName() {
         return CreateDatabase.dbFileName;
     }

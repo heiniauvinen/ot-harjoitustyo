@@ -1,9 +1,4 @@
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.util.ArrayList;
 import logic.Exam;
 import logic.Question;
@@ -59,18 +54,17 @@ public class ExamTest {
         exam.setToMinusMode();
         assertEquals(exam.getMode(), "minus");
     }
-    
+
     @Test
     public void questionToString() {
-        Question question = new Question(2,3,5,"+");
+        Question question = new Question(2, 3, 5, "+");
         assertEquals(question.toString(), "2 + 3 = 5");
     }
-    
+
     @Test
     public void setAndgetNumberOfQuestonsWorks() {
         exam.setNumberOfQuestions("3");
         assertEquals(exam.getNumberOfQuestions(), 3);
     }
-
 
 }

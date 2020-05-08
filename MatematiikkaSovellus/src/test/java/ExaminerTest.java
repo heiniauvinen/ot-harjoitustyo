@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.util.ArrayList;
 import logic.Exam;
@@ -54,8 +49,8 @@ public class ExaminerTest {
         for (int i = 1; i < questions.size(); i++) {
             studentAnswers.add(String.valueOf(questions.get(i).getResult()));
         }
-        
-        assertEquals(exam.getNumberOfQuestions() -1, examiner.checkExam(studentAnswers, exam));
+
+        assertEquals(exam.getNumberOfQuestions() - 1, examiner.checkExam(studentAnswers, exam));
     }
 
     @Test

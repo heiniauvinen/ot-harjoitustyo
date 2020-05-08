@@ -89,6 +89,11 @@ public class PersonalExam {
         return examQuestions;
     }
 
+    /**
+     * Palauttaa tämän hetkisten kysymysten lukumäärän.
+     *
+     * @return examQuestions -listan koko.
+     */
     public int getNumberOfCurrentExamQuestions() {
         return examQuestions.size();
     }

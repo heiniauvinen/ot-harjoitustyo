@@ -16,17 +16,17 @@ import logic.Question;
 public class QuestionDao implements Dao<Question, Integer> {
 
     String dbPath;
-    
+
     public QuestionDao() {
         this.dbPath = "jdbc:h2:./" + CreateDatabase.getDbFileName();
     }
-    
+
     /**
      * Luo kysymyksen tietokantaan.
+     *
      * @param question Luotu kysymys.
      * @throws SQLException Jos kysymystä ei voida tallentaa.
      */
-
     @Override
     public void create(Question question) throws SQLException {
         Connection connection = DriverManager.getConnection(dbPath, "sa", "");
@@ -39,11 +39,12 @@ public class QuestionDao implements Dao<Question, Integer> {
         connection.close();
 
     }
-    
+
     /**
      * Palauttaa listan kysymyksiä tietokannasta.
+     *
      * @return Lista kysymyksiä.
-     * @throws SQLException 
+     * @throws SQLException
      */
     @Override
     public ArrayList<Question> list() throws SQLException {

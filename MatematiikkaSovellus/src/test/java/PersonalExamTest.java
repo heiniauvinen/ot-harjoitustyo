@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import dao.CreateDatabase;
 import java.util.ArrayList;
@@ -32,13 +27,13 @@ public class PersonalExamTest {
         answerTexts = new ArrayList();
         studentAnswerTexts = new ArrayList();
         giveStudentAnswer = new HashMap();
-        String[] questionsArray = {"yksi","kaksi "," kolme"," neljä "};
-        String[] answerArray = {"1"," 2"," 3 ","4 "};
+        String[] questionsArray = {"yksi", "kaksi ", " kolme", " neljä "};
+        String[] answerArray = {"1", " 2", " 3 ", "4 "};
         String[] studentAnswerArray = {" 1", "2", " 3", " neljä "};
         Collections.addAll(answerTexts, answerArray);
         Collections.addAll(questionTexts, questionsArray);
         Collections.addAll(studentAnswerTexts, studentAnswerArray);
-        
+
         for (int i = 0; i < questionTexts.size(); i++) {
             giveStudentAnswer.put(questionTexts.get(i).trim(), studentAnswerTexts.get(i));
         }
@@ -55,6 +50,7 @@ public class PersonalExamTest {
         assertEquals(personalExam.questions.size(), 0);
 
     }
+
     @Test
     public void testPersonalExaminer() {
         for (int i = 0; i < questionTexts.size(); i++) {
@@ -63,7 +59,7 @@ public class PersonalExamTest {
         ArrayList<Question> examQuestions = personalExam.getNewQuestions();
         ArrayList<Question> currentQuestions = personalExam.getCurrentExamQuestions();
         ArrayList<String> studentAnswers = new ArrayList();
-        
+
         for (int i = 0; i < currentQuestions.size(); i++) {
             studentAnswers.add(giveStudentAnswer.get(currentQuestions.get(i).getQuestionText()));
         }

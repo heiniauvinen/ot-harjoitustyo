@@ -31,6 +31,7 @@ public class Question {
     }
 
     /**
+     * Luo uuden Question olion käyttäjän itse luomasta kysymys-vastaus parista.
      *
      * @param questionText Merkkijonona kysymys.
      * @param answerText Merkkijonona vastaus.
