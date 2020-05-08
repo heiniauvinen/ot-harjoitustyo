@@ -46,6 +46,12 @@ public class PersonalExam {
         if (answerText.trim().equals("")) {
             return "Vastauskentässä pitää olla tekstiä!";
         }
+        if (questionText.trim().length() > 200) {
+            return "Liian pitkä kysymys. Maksimi 200 merkkiä.";
+        }
+        if (answerText.trim().length() > 200) {
+            return "Liian pitkä vastaus. Maksimi 200 merkkiä.";
+        }
         Question question = new Question(questionText, answerText);
         try {
             questionDao.create(question);
