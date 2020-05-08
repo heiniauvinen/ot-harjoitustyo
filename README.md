@@ -25,6 +25,8 @@ Sovellus arpoo luvut, joten jokaisessa testissä on vaihtelevuutta.
 
 [Viikko 6](https://github.com/heiniauvinen/ot-harjoitustyo/releases/tag/Viikko6)
 
+[Loppupalautus](https://github.com/heiniauvinen/ot-harjoitustyo/releases/tag/Loppupalautus)
+
 ### Komentorivitoiminnot
 
 Suoritetaan kansiossa MatematiikkaSovellus.
