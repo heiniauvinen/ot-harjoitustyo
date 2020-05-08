@@ -38,7 +38,7 @@ antaa itse luotuja kysymyksiä. Jos kysymyksiä on yli kymmenen, sovellus arpoo 
 - Tulosten tarkastelu. Tulos -sivulla ohjelma näyttää käyttäjän parhaan tuloksen jokaisesta eri harjoituksesta. 
 - Useamman tuloksen tarkastelu. Tulos -sivulla näkyisi esimerkiksi kymmenen viimeisintä harjoituskertaa tietystä harjoituksesta. Tällöin kehityksen seuraaminen olisi helpompaa.
 - Ajanotto. Sovellus voisi säilyttää testien suoritukseen kuluvia aikoja.
-- Useampie erilaisten laskuharjoitusten lisäys. Esimerkiksi kerto- ja jakolaskut.
+- Useampien erilaisten laskuharjoitusten lisäys. Esimerkiksi kerto- ja jakolaskut.
 
 ## Sovelluksen edistyminen
 
@@ -59,4 +59,9 @@ antaa itse luotuja kysymyksiä. Jos kysymyksiä on yli kymmenen, sovellus arpoo 
 - _Luo oma kysymys_- ja _Aloita oma koe_ -toiminnot lisätty.
 - Oman kokeen tarkistustoiminto lisätty.
 - JavaDoc lisätty.
+
+### Viikko 7
+- Tietokanta tallentaa nyt pysyvästi.
+- Testit kunnossa.
+ 
 
