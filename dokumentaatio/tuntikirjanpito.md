@@ -27,5 +27,6 @@
 | 28.4. | 0,5  | Arkkitehtuurin ja README.md fiksailua |
 | 3.5.  | 1    | Käyttöohjeen täydennystä ja sovelluksen ulkoasun fiksailua. |
 | 6.5.  | 2    | Tietokanta tallentaa nyt pysyvästi, testejä lisätty ja testausdokumentti aloitettu. |
-| yht   | 44,5 | |
+| 8.5.  | 3    | Dokumentaatio kuntoon, koodin tarkistusta, loppupalautuksen teko. |
+| yht   | 49,5 | |
 
