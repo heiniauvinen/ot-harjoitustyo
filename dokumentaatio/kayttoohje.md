@@ -27,7 +27,13 @@ _Aloita oma koe_ -nappia painamalla voi tehdä omista kysymyksistä koostuvan ko
 Jos on valinnut suoritettavaksi harjoitukseksi yhteen- tai vähennyslaskut, avautuu valinnan jälkeen näkymä, jossa käyttäjä voi asettaa 
 harjoituksen luvuille ylä- ja alarajan, jolloin tällä on mahdollisuus 
 säätää itse harjoituksen vaativuustasoa. Lisäksi tulee valita kysymysten määrä 
-väliltä 1-20. Kun asetukset on käyttäjälle mieluiset, hän pääsee eteenpäin painamalla OK -nappia.
+väliltä 1-20. Kun asetukset on käyttäjälle mieluiset, hän pääsee eteenpäin painamalla OK -nappia. 
+
+Oletusasetuksena on 10 kysymystä, alaraja = 1, yläraja = 50. Jos käyttäjä ei valitse ensimmäisellä 
+kerralla asetuksia, koe avautuu oletusasetuksilla. Jos ylärajan asettaa pienemmäksi kuin alarajan, 
+tai esimerkiksi tekstinä, kysymykset annetaan edellisen kokeen luvuilla. Jos edellistä koetta ei ole, 
+ylä- ja alaraja ovat oletusasetusten mukaiset. 
+Jos kysymysten lukumäärän asettaa rajojen (1-20) ulkopuolelle, koe antaa oletusasetusten mukaiset 10 kysymystä.
 
 ## Yhteen- ja vähennyslaskuharjoituksen harjoitusnäkymä
 
